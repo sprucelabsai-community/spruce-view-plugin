@@ -1,0 +1,19 @@
+{
+  "installed": [
+    "test",
+    "schema",
+    "error"
+  ],
+  "skipped": [
+    "skill"
+  ],
+  "events.listenerCacheKey": "",
+  "events.listenerCacheKeys.httpsdevelopermercuryspruceai": "",
+  "scriptUpdater": {
+    "skipped": [
+      "fix.lint",
+      "rebuild",
+      "update.dependencies"
+    ]
+  }
+}
