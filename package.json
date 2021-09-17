@@ -33,9 +33,9 @@
     "node",
     "sprucelabs"
   ],
-  "homepage": "https://github.com/sprucelabsai/spruce-features-workspace",
+  "homepage": "https://github.com/sprucelabsai/sspruce-view-plugin",
   "bugs": {
-    "url": "https://github.com/sprucelabsai/spruce-features-workspace/issues"
+    "url": "https://github.com/sprucelabsai/sspruce-view-plugin/issues"
   },
   "scripts": {
     "build.ci": "yarn build.tsc && yarn build.resolve-paths && yarn lint",
@@ -44,6 +44,7 @@
     "build.dist": "yarn build.tsc && tsc --project tsconfig.dist.json && yarn build.resolve-paths && yarn build.esm-postbuild",
     "build.esm-postbuild": "esm-postbuild --target build/esm --patterns '**/*.js'",
     "build.resolve-paths": "resolve-path-aliases --target build --patterns '**/*.js,**/*.d.ts'",
+    "build.resolve-paths.esm": "TS_NODE_PROJECT=`pwd`/tsconfig.dist.json resolve-path-aliases --target build/esm --patterns '**/*.js,**/*.d.ts'",
     "build.tsc": "yarn build.copy-files && tsc",
     "clean": "yarn clean.build",
     "clean.all": "yarn clean.dependencies && yarn clean.build",
@@ -53,6 +54,7 @@
     "fix.lint.local": "eslint --fix --cache '**/*.ts'",
     "lint": "eslint --cache '**/*.ts'",
     "rebuild": "cd .. && yarn rebuild",
+    "release": "semantic-release",
     "resolve-paths.lint": "yarn build.resolve-paths ; yarn lint",
     "test": "jest",
     "update.dependencies": "cd ../ && yarn update.dependencies",
@@ -76,7 +78,7 @@
     "globby": "^11.0.4"
   },
   "devDependencies": {
-    "@sprucelabs/esm-postbuild": "^1.0.53",
+    "@sprucelabs/esm-postbuild": "^1.0.55",
     "@sprucelabs/jest-json-reporter": "^6.0.43",
     "@sprucelabs/jest-sheets-reporter": "^1.2.75",
     "@sprucelabs/mercury-client": "^16.10.49",
