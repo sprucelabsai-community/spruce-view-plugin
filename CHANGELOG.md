@@ -1,3 +1,5 @@
+## [5.4.57](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.56...v5.4.57) (2021-09-17)
+
 # 1.0.0 (2021-09-17)
 
 # Change Log
