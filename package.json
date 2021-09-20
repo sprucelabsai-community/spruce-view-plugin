@@ -16,7 +16,7 @@
       "@sprucelabs/spruce-test-fixtures"
     ]
   },
-  "version": "5.4.121",
+  "version": "5.4.122",
   "files": [
     "build/**/*",
     "!build/__tests__",
