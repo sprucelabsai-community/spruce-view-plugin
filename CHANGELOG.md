@@ -1,3 +1,55 @@
+## [5.4.141](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.140...v5.4.141) (2021-09-21)
+
+## [5.4.140](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.139...v5.4.140) (2021-09-21)
+
+## [5.4.139](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.138...v5.4.139) (2021-09-21)
+
+## [5.4.138](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.137...v5.4.138) (2021-09-21)
+
+## [5.4.137](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.136...v5.4.137) (2021-09-21)
+
+## [5.4.136](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.135...v5.4.136) (2021-09-21)
+
+## [5.4.135](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.134...v5.4.135) (2021-09-21)
+
+## [5.4.134](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.133...v5.4.134) (2021-09-21)
+
+## [5.4.133](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.132...v5.4.133) (2021-09-21)
+
+## [5.4.132](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.131...v5.4.132) (2021-09-21)
+
+## [5.4.131](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.130...v5.4.131) (2021-09-21)
+
+## [5.4.130](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.129...v5.4.130) (2021-09-21)
+
+## [5.4.129](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.128...v5.4.129) (2021-09-21)
+
+## [5.4.128](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.127...v5.4.128) (2021-09-20)
+
+## [5.4.127](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.126...v5.4.127) (2021-09-20)
+
+## [5.4.126](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.125...v5.4.126) (2021-09-20)
+
+## [5.4.125](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.124...v5.4.125) (2021-09-20)
+
+## [5.4.124](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.123...v5.4.124) (2021-09-20)
+
+## [5.4.123](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.122...v5.4.123) (2021-09-20)
+
+## [5.4.122](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.121...v5.4.122) (2021-09-20)
+
+## [5.4.121](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.120...v5.4.121) (2021-09-20)
+
+## [5.4.120](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.119...v5.4.120) (2021-09-20)
+
+## [5.4.119](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.118...v5.4.119) (2021-09-20)
+
+## [5.4.118](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.117...v5.4.118) (2021-09-20)
+
+## [5.4.117](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.116...v5.4.117) (2021-09-20)
+
+## [5.4.116](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.115...v5.4.116) (2021-09-20)
+
 ## [5.4.115](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.114...v5.4.115) (2021-09-20)
 
 ## [5.4.114](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.113...v5.4.114) (2021-09-20)
