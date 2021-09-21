@@ -19,3 +19,6 @@ yarn-error.log*
 
 /build/
 
+# dotenv environment variables file
+.env
+.env.*
