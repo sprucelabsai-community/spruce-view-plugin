@@ -67,8 +67,8 @@
   },
   "dependencies": {
     "@sprucelabs/error": "^5.0.77",
-    "@sprucelabs/heartwood-view-controllers": "^33.0.321",
-    "@sprucelabs/schema": "^25.3.113",
+    "@sprucelabs/heartwood-view-controllers": "^33.0.322",
+    "@sprucelabs/schema": "^25.3.114",
     "@sprucelabs/spruce-core-schemas": "^22.5.181",
     "@sprucelabs/spruce-event-plugin": "^5.4.100",
     "@sprucelabs/spruce-event-utils": "^16.0.197",
@@ -78,7 +78,7 @@
     "globby": "^11.0.4"
   },
   "devDependencies": {
-    "@sprucelabs/esm-postbuild": "^1.0.118",
+    "@sprucelabs/esm-postbuild": "^1.0.119",
     "@sprucelabs/jest-json-reporter": "^6.0.62",
     "@sprucelabs/jest-sheets-reporter": "^1.2.91",
     "@sprucelabs/mercury-client": "^16.10.97",
