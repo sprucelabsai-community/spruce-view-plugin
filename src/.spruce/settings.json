@@ -2,7 +2,8 @@
   "installed": [
     "test",
     "schema",
-    "error"
+    "error",
+    "event"
   ],
   "skipped": [
     "skill"

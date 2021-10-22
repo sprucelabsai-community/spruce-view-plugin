@@ -13,7 +13,8 @@
     },
     "upgradeIgnoreList": [
       "globby",
-      "@sprucelabs/spruce-test-fixtures"
+      "@sprucelabs/spruce-test-fixtures",
+      "@sprucelabs/mercury-core-events"
     ]
   },
   "version": "5.4.548",
@@ -71,7 +72,7 @@
     "@sprucelabs/schema": "^25.3.367",
     "@sprucelabs/spruce-core-schemas": "^22.5.480",
     "@sprucelabs/spruce-event-plugin": "^5.5.20",
-    "@sprucelabs/spruce-event-utils": "^16.0.528",
+    "@sprucelabs/spruce-event-utils": "^16.0.529",
     "@sprucelabs/spruce-skill-booter": "^5.5.20",
     "@sprucelabs/spruce-skill-utils": "^20.6.314",
     "@sprucelabs/spruce-test-fixtures": "^5.4.55",
@@ -82,7 +83,7 @@
     "@sprucelabs/jest-json-reporter": "^6.0.217",
     "@sprucelabs/jest-sheets-reporter": "^1.2.223",
     "@sprucelabs/mercury-client": "^16.13.113",
-    "@sprucelabs/mercury-types": "^26.1.518",
+    "@sprucelabs/mercury-types": "^26.1.519",
     "@sprucelabs/resolve-path-aliases": "^1.0.218",
     "@sprucelabs/semantic-release": "^4.0.8",
     "@sprucelabs/test": "^7.7.205",
