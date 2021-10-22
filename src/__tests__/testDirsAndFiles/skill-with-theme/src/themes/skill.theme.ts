@@ -37,6 +37,7 @@ const theme: SpruceSchemas.HeartwoodViewControllers.v2021_02_11.ThemeProps = {
 	color4: 'blue',
 	color4Inverse: 'blue',
 	color4Compliment: 'blue',
+	color4ComplimentTransparent: 'rgba(0,0,0,0.2)',
 	color4InverseCompliment: '#6b6b6b',
 
 	/**
