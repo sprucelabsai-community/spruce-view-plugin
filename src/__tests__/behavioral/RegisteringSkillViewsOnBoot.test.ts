@@ -99,7 +99,7 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 		const registered = eventResponseUtil.getFirstResponseOrThrow(results)
 
 		assert.isTruthy(registered.theme)
-		assert.isEqualDeep(registered.theme.props, expected)
+		assert.doesInclude(registered.theme.props, expected)
 	}
 
 	private static async GoodSkill() {
