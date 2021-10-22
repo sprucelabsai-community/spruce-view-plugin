@@ -14,7 +14,6 @@ import {
 	vcDiskUtil,
 	ViewHealthCheckItem,
 } from '@sprucelabs/spruce-test-fixtures'
-import { CoreEventContract } from '../tests/events.contract'
 
 require('dotenv').config()
 
@@ -51,8 +50,7 @@ export class ViewFeature implements SkillFeature {
 
 		this.log.info('Bundling local views.')
 		const events = this.skill.getFeatureByCode('event') as EventFeature
-		const client =
-			(await events.connectToApi()) as MercuryClient<CoreEventContract>
+		const client = (await events.connectToApi()) as MercuryClient<any>
 
 		await exporter.export({
 			source: viewsPath,
