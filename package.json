@@ -68,8 +68,8 @@
   },
   "dependencies": {
     "@sprucelabs/error": "^5.0.252",
-    "@sprucelabs/heartwood-view-controllers": "^34.1.14",
-    "@sprucelabs/schema": "^25.3.371",
+    "@sprucelabs/heartwood-view-controllers": "^34.1.15",
+    "@sprucelabs/schema": "^25.3.372",
     "@sprucelabs/spruce-core-schemas": "^22.5.488",
     "@sprucelabs/spruce-event-plugin": "^5.5.22",
     "@sprucelabs/spruce-event-utils": "^16.0.539",
