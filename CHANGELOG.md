@@ -1,3 +1,10 @@
+# [6.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.676...v6.0.0) (2021-10-28)
+
+
+### Breaking Changes
+
+* getFactory -> getViewControllerFactory ([f262df7](https://github.com/sprucelabsai/spruce-view-plugin/commit/f262df7))
+
 ## [5.4.676](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.675...v5.4.676) (2021-10-28)
 
 ## [5.4.675](https://github.com/sprucelabsai/spruce-view-plugin/compare/v5.4.674...v5.4.675) (2021-10-28)
