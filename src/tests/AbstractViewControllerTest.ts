@@ -41,7 +41,7 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
 		return controller
 	}
 
-	protected static getFactory() {
+	protected static getViewControllerFactory() {
 		return this.getViewControllerFixture().getFactory()
 	}
 
