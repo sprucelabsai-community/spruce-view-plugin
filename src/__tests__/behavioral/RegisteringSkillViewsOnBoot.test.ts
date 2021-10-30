@@ -33,7 +33,7 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 
 	@test()
 	protected static async registersNothingToStart() {
-		const skill = await this.bootSkill()
+		const { skill } = await this.bootSkill()
 		const results = await this.getSkillViews(skill)
 
 		eventErrorAssertUtil.assertErrorFromResponse(

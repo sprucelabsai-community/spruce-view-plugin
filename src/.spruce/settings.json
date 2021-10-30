@@ -10,10 +10,6 @@
   "events.listenerCacheKey": "",
   "events.listenerCacheKeys.httpsdevelopermercuryspruceai": "",
   "scriptUpdater": {
-    "skipped": [
-      "fix.lint",
-      "rebuild",
-      "update.dependencies"
-    ]
+    "skipped": []
   }
 }

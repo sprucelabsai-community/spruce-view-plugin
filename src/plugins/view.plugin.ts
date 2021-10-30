@@ -4,6 +4,7 @@ import { MercuryClient } from '@sprucelabs/mercury-client'
 import { EventFeature } from '@sprucelabs/spruce-event-plugin'
 import { eventResponseUtil } from '@sprucelabs/spruce-event-utils'
 import {
+	BootCallback,
 	diskUtil,
 	Log,
 	SettingsService,
@@ -21,10 +22,14 @@ export class ViewFeature implements SkillFeature {
 	private skill: Skill
 	private _isBooted = false
 	private log: Log
+	private bootHandler?: BootCallback
 
 	public constructor(skill: Skill) {
 		this.skill = skill
 		this.log = skill.buildLog('View.Feature')
+	}
+	public onBoot(cb: BootCallback): void {
+		this.bootHandler = cb
 	}
 
 	public async execute(): Promise<void> {
@@ -33,6 +38,8 @@ export class ViewFeature implements SkillFeature {
 			const results = await this.importAndRegisterSkillViews(viewsPath)
 			eventResponseUtil.getFirstResponseOrThrow(results)
 		}
+
+		this.bootHandler?.()
 
 		this._isBooted = true
 	}
