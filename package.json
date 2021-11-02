@@ -70,7 +70,7 @@
     "@sprucelabs/error": "^5.0.265",
     "@sprucelabs/heartwood-view-controllers": "^35.2.0",
     "@sprucelabs/schema": "^25.3.440",
-    "@sprucelabs/spruce-core-schemas": "^22.5.608",
+    "@sprucelabs/spruce-core-schemas": "^22.6.0",
     "@sprucelabs/spruce-event-plugin": "^7.1.4",
     "@sprucelabs/spruce-event-utils": "^16.0.710",
     "@sprucelabs/spruce-skill-booter": "^7.1.4",
