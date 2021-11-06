@@ -75,7 +75,7 @@
     "@sprucelabs/spruce-event-utils": "^16.0.757",
     "@sprucelabs/spruce-skill-booter": "^7.3.9",
     "@sprucelabs/spruce-skill-utils": "^22.0.31",
-    "@sprucelabs/spruce-test-fixtures": "^7.0.3",
+    "@sprucelabs/spruce-test-fixtures": "^7.3.9",
     "globby": "^11.0.4"
   },
   "devDependencies": {
