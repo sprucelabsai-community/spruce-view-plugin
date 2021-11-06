@@ -13,7 +13,6 @@
     },
     "upgradeIgnoreList": [
       "globby",
-      "@sprucelabs/spruce-test-fixtures",
       "@sprucelabs/mercury-core-events"
     ]
   },
@@ -68,14 +67,14 @@
   },
   "dependencies": {
     "@sprucelabs/error": "^5.0.272",
-    "@sprucelabs/heartwood-view-controllers": "^38.0.0",
-    "@sprucelabs/schema": "^25.3.459",
+    "@sprucelabs/heartwood-view-controllers": "^38.0.1",
+    "@sprucelabs/schema": "^25.3.460",
     "@sprucelabs/spruce-core-schemas": "^22.6.29",
-    "@sprucelabs/spruce-event-plugin": "^7.3.9",
+    "@sprucelabs/spruce-event-plugin": "^7.3.10",
     "@sprucelabs/spruce-event-utils": "^16.0.757",
-    "@sprucelabs/spruce-skill-booter": "^7.3.9",
+    "@sprucelabs/spruce-skill-booter": "^7.3.10",
     "@sprucelabs/spruce-skill-utils": "^22.0.31",
-    "@sprucelabs/spruce-test-fixtures": "^7.3.9",
+    "@sprucelabs/spruce-test-fixtures": "^7.3.10",
     "globby": "^11.0.4"
   },
   "devDependencies": {
