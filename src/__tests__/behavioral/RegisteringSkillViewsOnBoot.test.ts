@@ -3,7 +3,7 @@ import { SpruceSchemas } from '@sprucelabs/mercury-types'
 import { EventFeature } from '@sprucelabs/spruce-event-plugin'
 import {
 	eventContractUtil,
-	eventErrorAssertUtil,
+	eventAssertUtil,
 	eventResponseUtil,
 } from '@sprucelabs/spruce-event-utils'
 import { diskUtil, Skill } from '@sprucelabs/spruce-skill-utils'
@@ -36,13 +36,9 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 		const { skill } = await this.bootSkill()
 		const results = await this.getSkillViews(skill)
 
-		eventErrorAssertUtil.assertErrorFromResponse(
-			results,
-			'SKILL_VIEWS_NOT_FOUND',
-			{
-				namespace: this.currentSkill.slug,
-			}
-		)
+		eventAssertUtil.assertErrorFromResponse(results, 'SKILL_VIEWS_NOT_FOUND', {
+			namespace: this.currentSkill.slug,
+		})
 	}
 
 	@test()
