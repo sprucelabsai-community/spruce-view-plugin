@@ -1,3 +1,10 @@
+# [6.1.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v6.0.205...v6.1.0) (2021-11-11)
+
+
+### Features
+
+* Developers can create 'mock' skill views to stand in for real ones to make testing even faster! ([526237b](https://github.com/sprucelabsai/spruce-view-plugin/commit/526237b))
+
 ## [6.0.205](https://github.com/sprucelabsai/spruce-view-plugin/compare/v6.0.204...v6.0.205) (2021-11-11)
 
 ## [6.0.204](https://github.com/sprucelabsai/spruce-view-plugin/compare/v6.0.203...v6.0.204) (2021-11-11)
