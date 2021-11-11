@@ -33,6 +33,11 @@ export default class AbstractViewControllerTestTest extends AbstractViewControll
 		'build'
 	)
 
+	protected static async beforeEach() {
+		await super.beforeEach()
+		delete this.controllerMap
+	}
+
 	@test()
 	protected static hasControllerFactoryMethod() {
 		assert.isFunction(this.Controller)
@@ -123,8 +128,6 @@ export default class AbstractViewControllerTestTest extends AbstractViewControll
 
 		//@ts-ignore
 		const vc = this.Controller('cheesey', {})
-
-		assert.doesThrow(() => this.Controller('view.spy', {}))
 		assert.isTrue(vc instanceof FormViewControllerImpl)
 	}
 
@@ -136,6 +139,13 @@ export default class AbstractViewControllerTestTest extends AbstractViewControll
 
 		const svc = this.Controller('view.spy', {})
 		vcAssertUtil.assertSkillViewRendersCard(svc)
+	}
+
+	@test()
+	protected static sharesVcFactory() {
+		const factory = this.getViewControllerFactory()
+		const fixture = this.Fixture('view')
+		assert.isEqual(factory, fixture.getFactory())
 	}
 
 	private static async copySkillFromTestDirToTmpDir2(
