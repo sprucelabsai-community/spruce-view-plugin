@@ -1,3 +1,10 @@
+# [7.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v6.1.7...v7.0.0) (2021-11-12)
+
+
+### Breaking Changes
+
+* removed unneeded mock skill view controller (already in test-fixtures) ([c53e976](https://github.com/sprucelabsai/spruce-view-plugin/commit/c53e976))
+
 ## [6.1.7](https://github.com/sprucelabsai/spruce-view-plugin/compare/v6.1.6...v6.1.7) (2021-11-12)
 
 ## [6.1.6](https://github.com/sprucelabsai/spruce-view-plugin/compare/v6.1.5...v6.1.6) (2021-11-12)
