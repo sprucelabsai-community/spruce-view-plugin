@@ -16,7 +16,7 @@
       "@sprucelabs/mercury-core-events"
     ]
   },
-  "version": "7.0.25",
+  "version": "7.0.26",
   "files": [
     "build/**/*",
     "!build/__tests__",
