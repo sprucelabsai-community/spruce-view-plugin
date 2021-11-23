@@ -4490,7 +4490,7 @@ const eventContracts = [buildEventContract({
               "schema": {
                 "id": "listOrgsEmitPayload",
                 "fields": {
-                  "showMineOnly": {
+                  "shouldOnlyShowMine": {
                     "type": "boolean"
                   }
                 }
@@ -4676,7 +4676,7 @@ const eventContracts = [buildEventContract({
               "schema": {
                 "id": "listSkillsEmitPayload",
                 "fields": {
-                  "showMineOnly": {
+                  "shouldOnlyShowMine": {
                     "type": "boolean"
                   }
                 }
