@@ -11,5 +11,10 @@
   "events.listenerCacheKeys.httpsdevelopermercuryspruceai": "",
   "scriptUpdater": {
     "skipped": []
+  },
+  "writer": {
+    "skipped": [
+      ".eslintignore"
+    ]
   }
 }
