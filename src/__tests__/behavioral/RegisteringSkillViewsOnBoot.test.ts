@@ -7,17 +7,19 @@ import {
 	eventResponseUtil,
 } from '@sprucelabs/spruce-event-utils'
 import { diskUtil, Skill } from '@sprucelabs/spruce-skill-utils'
-import { vcDiskUtil } from '@sprucelabs/spruce-test-fixtures'
+import { vcDiskUtil, login } from '@sprucelabs/spruce-test-fixtures'
 import { assert, test } from '@sprucelabs/test'
 import { errorAssertUtil } from '@sprucelabs/test-utils'
 import { ViewFeature } from '../../plugins/view.plugin'
 import AbstractViewPluginTest from '../../tests/AbstractViewPluginTest'
+import { DEMO_NUMBER } from '../../tests/constants'
 import coreEventContracts, {
 	CoreEventContract,
 } from '../../tests/events.contract'
 
 type RegisteredSkill = SpruceSchemas.Spruce.v2020_07_22.Skill
 
+@login(DEMO_NUMBER)
 export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTest {
 	private static currentSkill: RegisteredSkill
 
