@@ -25,7 +25,9 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 
 	protected static async beforeEach() {
 		await super.beforeEach()
+
 		const combined = eventContractUtil.unifyContracts(coreEventContracts as any)
+
 		assert.isTruthy(combined)
 
 		MercuryClientFactory.setDefaultContract(combined)
@@ -105,7 +107,6 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 	private static async GoodSkill() {
 		return this.TestSkillWithViewFilesInPlace('skill')
 	}
-
 	private static async GoodSkillWithTheme() {
 		return this.TestSkillWithViewFilesInPlace('skill-with-theme')
 	}
