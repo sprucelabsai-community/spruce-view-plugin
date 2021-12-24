@@ -6,7 +6,7 @@ import {
 	eventAssertUtil,
 	eventResponseUtil,
 } from '@sprucelabs/spruce-event-utils'
-import { diskUtil, Skill } from '@sprucelabs/spruce-skill-utils'
+import { AuthService, diskUtil, Skill } from '@sprucelabs/spruce-skill-utils'
 import { vcDiskUtil, login } from '@sprucelabs/spruce-test-fixtures'
 import { assert, test } from '@sprucelabs/test'
 import { errorAssertUtil } from '@sprucelabs/test-utils'
@@ -90,6 +90,8 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 
 		const expected = require(themeFile).default
 		const skill = await this.GoodSkillWithTheme()
+
+		AuthService.Auth(this.cwd).updateCurrentSkill(this.currentSkill)
 
 		await this.bootSkill({ skill })
 
