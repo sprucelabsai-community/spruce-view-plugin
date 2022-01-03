@@ -1,21 +1,18 @@
-import { MercuryClient, MercuryClientFactory } from '@sprucelabs/mercury-client'
+import { MercuryClient } from '@sprucelabs/mercury-client'
 import { SpruceSchemas } from '@sprucelabs/mercury-types'
 import { EventFeature } from '@sprucelabs/spruce-event-plugin'
 import {
-	eventContractUtil,
 	eventAssertUtil,
 	eventResponseUtil,
 } from '@sprucelabs/spruce-event-utils'
-import { AuthService, diskUtil, Skill } from '@sprucelabs/spruce-skill-utils'
+import { AuthService, Skill } from '@sprucelabs/spruce-skill-utils'
 import { vcDiskUtil, login } from '@sprucelabs/spruce-test-fixtures'
 import { assert, test } from '@sprucelabs/test'
 import { errorAssertUtil } from '@sprucelabs/test-utils'
 import { ViewFeature } from '../../plugins/view.plugin'
 import AbstractViewPluginTest from '../../tests/AbstractViewPluginTest'
 import { DEMO_NUMBER } from '../../tests/constants'
-import coreEventContracts, {
-	CoreEventContract,
-} from '../../tests/events.contract'
+import { CoreEventContract } from '../../tests/events.contract'
 
 type RegisteredSkill = SpruceSchemas.Spruce.v2020_07_22.Skill
 
@@ -25,14 +22,8 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 
 	protected static async beforeEach() {
 		await super.beforeEach()
-
-		const combined = eventContractUtil.unifyContracts(coreEventContracts as any)
-
-		assert.isTruthy(combined)
-
-		MercuryClientFactory.setDefaultContract(combined)
-
-		this.currentSkill = await this.seedAndRegisterCurrentSkill()
+		this.currentSkill =
+			await this.importEventContractSeedAndRegisterCurrentSkill()
 	}
 
 	@test()
@@ -104,23 +95,12 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 		assert.doesInclude(registered.theme.props, expected)
 	}
 
-	private static async GoodSkill() {
-		return this.TestSkillWithViewFilesInPlace('skill')
-	}
 	private static async GoodSkillWithTheme() {
 		return this.TestSkillWithViewFilesInPlace('skill-with-theme')
 	}
 
 	private static async BadSkill() {
 		return this.TestSkillWithViewFilesInPlace('broken-skill')
-	}
-
-	private static async TestSkillWithViewFilesInPlace(testDir: string) {
-		const skill = await this.SkillFromTestDir(testDir)
-		const source = this.resolveTestPathSrc(testDir, 'src')
-		const destination = diskUtil.resolvePath(skill.rootDir, 'src')
-		await diskUtil.copyDir(source, destination)
-		return skill
 	}
 
 	private static async getSkillViews(skill: Skill) {
@@ -138,15 +118,5 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 		const client =
 			(await events.connectToApi()) as MercuryClient<CoreEventContract>
 		return client
-	}
-
-	private static async seedAndRegisterCurrentSkill() {
-		const currentSkill = await this.Fixture('skill').seedDemoSkill({
-			name: 'my skill with events',
-		})
-
-		process.env.SKILL_ID = currentSkill.id
-		process.env.SKILL_API_KEY = currentSkill.apiKey
-		return currentSkill
 	}
 }

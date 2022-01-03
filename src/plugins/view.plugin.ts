@@ -34,9 +34,13 @@ export class ViewFeature implements SkillFeature {
 
 	public async execute(): Promise<void> {
 		const viewsPath = this.getCombinedViewsSourcePath()
-		if (viewsPath && process.env.SHOULD_REGISTER_VIEWS !== 'false') {
-			const results = await this.importAndRegisterSkillViews(viewsPath)
-			eventResponseUtil.getFirstResponseOrThrow(results)
+		if (viewsPath) {
+			if (process.env.SHOULD_REGISTER_VIEWS !== 'false') {
+				const results = await this.importAndRegisterSkillViews(viewsPath)
+				eventResponseUtil.getFirstResponseOrThrow(results)
+			} else if (process.env.VIEW_PROFILER_STATS_DESTINATION_DIR) {
+				await this.packViews(viewsPath)
+			}
 		}
 
 		this.bootHandler?.()
@@ -47,25 +51,11 @@ export class ViewFeature implements SkillFeature {
 	private async importAndRegisterSkillViews(viewsPath: string) {
 		this.log.info('Importing local views.')
 
-		const { ids, theme } = vcDiskUtil.loadViewControllers(this.skill.activeDir)
+		const source = await this.packViews(viewsPath)
 
-		const exporter = ViewControllerExporter.Exporter(this.skill.rootDir)
-		const destination = diskUtil.resolvePath(
-			diskUtil.createRandomTempDir(),
-			'bundle.js'
-		)
-
-		this.log.info('Bundling local views.')
 		const events = this.skill.getFeatureByCode('event') as EventFeature
 		const client = (await events.connectToApi()) as MercuryClient<any>
-
-		await exporter.export({
-			source: viewsPath,
-			destination,
-		})
-
-		const source = diskUtil.readFile(destination)
-
+		const { ids, theme } = vcDiskUtil.loadViewControllers(this.skill.activeDir)
 		this.log.info(`Bundled ${ids.length} view controllers. Registering now...`)
 
 		const results = await client.emit(
@@ -82,6 +72,25 @@ export class ViewFeature implements SkillFeature {
 		this.log.info('Done registering view controllers.')
 
 		return results
+	}
+
+	private async packViews(viewsPath: string) {
+		const exporter = ViewControllerExporter.Exporter(this.skill.rootDir)
+		const destination = diskUtil.resolvePath(
+			diskUtil.createRandomTempDir(),
+			'bundle.js'
+		)
+
+		await exporter.export({
+			source: viewsPath,
+			destination,
+			profilerStatsDestination: process.env.VIEW_PROFILER_STATS_DESTINATION_DIR,
+		})
+
+		this.log.info('Bundling local views.')
+
+		const source = diskUtil.readFile(destination)
+		return source
 	}
 
 	private getCombinedViewsSourcePath() {
