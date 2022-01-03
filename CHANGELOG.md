@@ -1,3 +1,10 @@
+# [7.1.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v7.0.557...v7.1.0) (2022-01-03)
+
+
+### Features
+
+* setting `VIEW_PROFILER_STATS_DESTINATION_DIR` will write view stats to the destination ([d6624f9](https://github.com/sprucelabsai/spruce-view-plugin/commit/d6624f9))
+
 ## [7.0.557](https://github.com/sprucelabsai/spruce-view-plugin/compare/v7.0.556...v7.0.557) (2022-01-03)
 
 ## [7.0.556](https://github.com/sprucelabsai/spruce-view-plugin/compare/v7.0.555...v7.0.556) (2022-01-03)
