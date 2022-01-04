@@ -124,7 +124,7 @@ export default class AbstractViewControllerTestTest extends AbstractViewControll
 		}
 
 		//@ts-ignore
-		this.fixture = undefined
+		this.viewFixture = undefined
 
 		//@ts-ignore
 		const vc = this.Controller('cheesey', {})
