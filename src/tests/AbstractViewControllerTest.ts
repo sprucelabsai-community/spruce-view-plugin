@@ -46,9 +46,10 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
 	}
 
 	protected static async load(
-		vc: SkillViewController,
+		vc: Pick<SkillViewController, 'load'>,
 		args: Record<string, any> = {}
 	) {
+		//@ts-ignore - remove this comment when you find it next
 		return this.getViewControllerFixture().load(vc, args)
 	}
 
