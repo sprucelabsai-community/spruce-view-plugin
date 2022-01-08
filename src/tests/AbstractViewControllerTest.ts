@@ -31,36 +31,29 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
 		this.viewFixture = views
 	}
 
-	private static getViewControllerFixture() {
-		if (!this.viewFixture) {
-			this.viewFixture = this.Fixture('view', {
-				controllerMap: this.controllerMap,
-				vcDir: this.vcDir,
-			})
-		}
-
-		return this.viewFixture
+	protected static async beforeEach(): Promise<void> {
+		this.viewFixture = undefined
+		await super.beforeEach()
 	}
 
 	protected static Controller<N extends ViewControllerId>(
 		name: N,
 		options: ControllerOptions<N>
 	) {
-		const controller = this.getViewControllerFixture().Controller(name, options)
+		const controller = this.views.Controller(name, options)
 
 		return controller
 	}
 
 	protected static getViewControllerFactory() {
-		return this.getViewControllerFixture().getFactory()
+		return this.views.getFactory()
 	}
 
 	protected static async load(
 		vc: Pick<SkillViewController, 'load'>,
 		args: Record<string, any> = {}
 	) {
-		//@ts-ignore - remove this comment when you find it next
-		return this.getViewControllerFixture().load(vc, args)
+		return this.views.load(vc, args)
 	}
 
 	protected static render<VC extends ViewController<any>>(

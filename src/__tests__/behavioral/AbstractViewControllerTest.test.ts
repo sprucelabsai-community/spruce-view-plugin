@@ -60,6 +60,7 @@ export default class AbstractViewControllerTestTest extends AbstractViewControll
 	@test()
 	protected static async buildController() {
 		const vc = this.Controller('view.book', {})
+
 		assert.isTruthy(vc)
 		const model = vc.render()
 		assert.isTruthy(model)
@@ -124,7 +125,7 @@ export default class AbstractViewControllerTestTest extends AbstractViewControll
 		}
 
 		//@ts-ignore
-		this.viewFixture = undefined
+		this.views = undefined
 
 		//@ts-ignore
 		const vc = this.Controller('cheesey', {})
