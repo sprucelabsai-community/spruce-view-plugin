@@ -16,9 +16,19 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
 	protected static controllerMap: Record<string, any> | undefined
 	private static viewFixture?: ViewControllerFixture
 
-	protected static async beforeEach() {
-		await super.beforeEach()
-		this.viewFixture = undefined
+	protected static get views(): ViewControllerFixture {
+		if (!this.viewFixture) {
+			this.viewFixture = this.Fixture('view', {
+				controllerMap: this.controllerMap,
+				vcDir: this.vcDir,
+			})
+		}
+
+		return this.viewFixture
+	}
+
+	protected static set views(views: ViewControllerFixture | undefined) {
+		this.viewFixture = views
 	}
 
 	private static getViewControllerFixture() {
