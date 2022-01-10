@@ -1,3 +1,10 @@
+# [7.2.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v7.1.61...v7.2.0) (2022-01-10)
+
+
+### Features
+
+* scope availabl as prop on abstract view controller test ([f6702ab](https://github.com/sprucelabsai/spruce-view-plugin/commit/f6702ab))
+
 ## [7.1.61](https://github.com/sprucelabsai/spruce-view-plugin/compare/v7.1.60...v7.1.61) (2022-01-10)
 
 ## [7.1.60](https://github.com/sprucelabsai/spruce-view-plugin/compare/v7.1.59...v7.1.60) (2022-01-10)
