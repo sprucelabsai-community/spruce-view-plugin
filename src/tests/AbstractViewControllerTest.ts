@@ -5,6 +5,7 @@ import {
 	RenderOptions,
 	ViewController,
 	renderUtil,
+	Scope,
 } from '@sprucelabs/heartwood-view-controllers'
 import {
 	AbstractSpruceFixtureTest,
@@ -15,6 +16,19 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
 	protected static vcDir?: string
 	protected static controllerMap: Record<string, any> | undefined
 	private static viewFixture?: ViewControllerFixture
+
+	private static _scope?: Scope
+
+	protected static get scope(): Scope {
+		if (!this._scope) {
+			this._scope = this.views.getScope()
+		}
+		return this._scope
+	}
+
+	protected static set scope(scope: Scope | undefined) {
+		this._scope = scope
+	}
 
 	protected static get views(): ViewControllerFixture {
 		if (!this.viewFixture) {
@@ -33,6 +47,7 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
 
 	protected static async beforeEach(): Promise<void> {
 		this.viewFixture = undefined
+		this._scope = undefined
 		await super.beforeEach()
 	}
 

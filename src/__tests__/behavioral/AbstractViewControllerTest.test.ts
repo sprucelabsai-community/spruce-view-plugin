@@ -44,6 +44,21 @@ export default class AbstractViewControllerTestTest extends AbstractViewControll
 	}
 
 	@test()
+	protected static hasScope() {
+		assert.isEqual(this.scope, this.views.getScope())
+		const scope = {}
+
+		//@ts-ignore
+		this.scope = scope
+		assert.isEqual(this.scope, scope)
+	}
+
+	@test()
+	protected static scopeIsReset() {
+		assert.isEqual(this.scope, this.views.getScope())
+	}
+
+	@test()
 	protected static registeringSkillviewsFalseByDefault() {
 		assert.isEqual(process.env.SHOULD_REGISTER_VIEWS, 'false')
 	}
