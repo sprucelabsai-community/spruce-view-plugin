@@ -2,7 +2,7 @@ import {
 	cardSchema,
 	formSchema,
 	FormViewControllerImpl,
-	vcAssertUtil,
+	vcAssert,
 	ViewControllerId,
 } from '@sprucelabs/heartwood-view-controllers'
 import { validateSchemaValues, Schema } from '@sprucelabs/schema'
@@ -148,13 +148,13 @@ export default class AbstractViewControllerTestTest extends AbstractViewControll
 	}
 
 	@test()
-	protected static canUseVcAssertUtil() {
+	protected static canUsevcAssert() {
 		this.controllerMap = {
 			[`view.spy`]: SpySkillViewController,
 		}
 
 		const svc = this.Controller('view.spy', {})
-		vcAssertUtil.assertSkillViewRendersCard(svc)
+		vcAssert.assertSkillViewRendersCard(svc)
 	}
 
 	@test()
