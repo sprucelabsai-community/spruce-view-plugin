@@ -7,7 +7,7 @@ import {
 } from '@sprucelabs/spruce-event-utils'
 import { AuthService, Skill } from '@sprucelabs/spruce-skill-utils'
 import { vcDiskUtil, login } from '@sprucelabs/spruce-test-fixtures'
-import { assert, test } from '@sprucelabs/test'
+import { assert, assertUtil, test } from '@sprucelabs/test'
 import { errorAssertUtil } from '@sprucelabs/test-utils'
 import { ViewFeature } from '../../plugins/view.plugin'
 import AbstractViewPluginTest from '../../tests/AbstractViewPluginTest'
@@ -42,7 +42,12 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 
 		const skill = await this.GoodSkill()
 
-		await this.bootSkill({ skill })
+		try {
+			await this.bootSkill({ skill })
+		} catch (err: any) {
+			debugger
+			assert.fail(assertUtil.stringify(err))
+		}
 
 		const results = await this.getSkillViews(skill)
 		const registered = eventResponseUtil.getFirstResponseOrThrow(results)
