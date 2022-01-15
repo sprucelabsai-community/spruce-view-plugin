@@ -1,5 +1,4 @@
 import { AbstractViewController } from '@sprucelabs/heartwood-view-controllers'
-import dotenv from 'dotenv'
 
 export default class BookFormViewController extends AbstractViewController<any> {
 	public static id = 'book-form'
@@ -7,7 +6,7 @@ export default class BookFormViewController extends AbstractViewController<any> 
 	//@ts-ignore
 	public render() {
 		//@ts-ignore
-		console.log = dotenv
+		console.log = {}
 
 		//@ts-ignore
 		global.document = {

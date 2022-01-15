@@ -45,7 +45,6 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 		try {
 			await this.bootSkill({ skill })
 		} catch (err: any) {
-			debugger
 			assert.fail(assertUtil.stringify(err))
 		}
 
