@@ -30,7 +30,7 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
 		this._scope = scope
 	}
 
-	protected static get views(): ViewControllerFixture {
+	public static get views(): ViewControllerFixture {
 		if (!this.viewFixture) {
 			this.viewFixture = this.Fixture('view', {
 				controllerMap: this.controllerMap,
@@ -41,7 +41,7 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
 		return this.viewFixture
 	}
 
-	protected static set views(views: ViewControllerFixture | undefined) {
+	public static set views(views: ViewControllerFixture | undefined) {
 		this.viewFixture = views
 	}
 
