@@ -6,7 +6,7 @@
   "skill": {
     "namespace": "view",
     "blockedCommands": {
-      "sync.events": "You need to use pull.event.contracts in this project."
+      "sync.events": "You need to use pull.event.contracts in this project!"
     },
     "commandOverrides": {
       "pull.event.contracts": "--destination ./src/tests"
