@@ -2,7 +2,6 @@ import AbstractSpruceError from '@sprucelabs/error'
 import { ViewControllerExporter } from '@sprucelabs/heartwood-view-controllers'
 import { MercuryClient } from '@sprucelabs/mercury-client'
 import { EventFeature } from '@sprucelabs/spruce-event-plugin'
-import { eventResponseUtil } from '@sprucelabs/spruce-event-utils'
 import {
 	BootCallback,
 	diskUtil,
@@ -36,8 +35,7 @@ export class ViewFeature implements SkillFeature {
 		const viewsPath = this.getCombinedViewsSourcePath()
 		if (viewsPath) {
 			if (process.env.SHOULD_REGISTER_VIEWS !== 'false') {
-				const results = await this.importAndRegisterSkillViews(viewsPath)
-				eventResponseUtil.getFirstResponseOrThrow(results)
+				await this.importAndRegisterSkillViews(viewsPath)
 			} else if (process.env.VIEW_PROFILER_STATS_DESTINATION_DIR) {
 				await this.packViews(viewsPath)
 			}
@@ -58,7 +56,7 @@ export class ViewFeature implements SkillFeature {
 		const { ids, theme } = vcDiskUtil.loadViewControllers(this.skill.activeDir)
 		this.log.info(`Bundled ${ids.length} view controllers. Registering now...`)
 
-		const results = await client.emit(
+		const results = await client.emitAndFlattenResponses(
 			'heartwood.register-skill-views::v2021_02_11',
 			{
 				payload: {
