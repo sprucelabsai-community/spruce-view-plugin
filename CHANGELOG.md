@@ -1,3 +1,10 @@
+# [8.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v7.2.133...v8.0.0) (2022-01-31)
+
+
+### Breaking Changes
+
+* upgrade ([60e1116](https://github.com/sprucelabsai/spruce-view-plugin/commit/60e1116))
+
 ## [7.2.133](https://github.com/sprucelabsai/spruce-view-plugin/compare/v7.2.132...v7.2.133) (2022-01-29)
 
 ## [7.2.132](https://github.com/sprucelabsai/spruce-view-plugin/compare/v7.2.131...v7.2.132) (2022-01-29)
