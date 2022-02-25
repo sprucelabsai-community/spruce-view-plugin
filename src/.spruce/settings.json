@@ -10,7 +10,10 @@
   "events.listenerCacheKey": "",
   "events.listenerCacheKeys.httpsdevelopermercuryspruceai": "",
   "scriptUpdater": {
-    "skipped": []
+    "skipped": [
+      "build.tsc",
+      "lint"
+    ]
   },
   "writer": {
     "skipped": [
