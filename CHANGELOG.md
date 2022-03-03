@@ -1,3 +1,10 @@
+# [11.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v10.0.0...v11.0.0) (2022-03-03)
+
+
+### Breaking Changes
+
+* **auto-upgrade:** upgraded packages [upgrade-all] ([eaab951](https://github.com/sprucelabsai/spruce-view-plugin/commit/eaab951))
+
 # [10.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v9.0.90...v10.0.0) (2022-03-03)
 
 
