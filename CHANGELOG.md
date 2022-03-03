@@ -1,3 +1,10 @@
+# [12.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v11.0.0...v12.0.0) (2022-03-03)
+
+
+### Breaking Changes
+
+* spruce upgrade ([e2786b5](https://github.com/sprucelabsai/spruce-view-plugin/commit/e2786b5))
+
 # [11.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v10.0.0...v11.0.0) (2022-03-03)
 
 
