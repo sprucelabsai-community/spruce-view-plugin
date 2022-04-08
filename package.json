@@ -71,11 +71,11 @@
     "@sprucelabs/heartwood-view-controllers": "^70.12.7",
     "@sprucelabs/schema": "^27.1.44",
     "@sprucelabs/spruce-core-schemas": "^25.0.72",
-    "@sprucelabs/spruce-event-plugin": "^30.3.36",
+    "@sprucelabs/spruce-event-plugin": "^30.3.37",
     "@sprucelabs/spruce-event-utils": "^19.1.67",
-    "@sprucelabs/spruce-skill-booter": "^30.3.36",
+    "@sprucelabs/spruce-skill-booter": "^30.3.37",
     "@sprucelabs/spruce-skill-utils": "^25.0.70",
-    "@sprucelabs/spruce-test-fixtures": "^30.3.36",
+    "@sprucelabs/spruce-test-fixtures": "^30.3.37",
     "globby": "^11.0.4"
   },
   "devDependencies": {
