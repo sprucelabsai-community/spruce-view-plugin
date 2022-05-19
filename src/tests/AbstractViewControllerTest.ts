@@ -9,6 +9,7 @@ import {
 } from '@sprucelabs/heartwood-view-controllers'
 import {
 	AbstractSpruceFixtureTest,
+	ArgsFromSvc,
 	ViewControllerFixture,
 } from '@sprucelabs/spruce-test-fixtures'
 
@@ -64,9 +65,9 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
 		return this.views.getFactory()
 	}
 
-	protected static async load(
-		vc: Pick<SkillViewController, 'load'>,
-		args: Record<string, any> = {}
+	protected static async load<Svc extends SkillViewController>(
+		vc: Svc,
+		args?: ArgsFromSvc<Svc>
 	) {
 		return this.views.load(vc, args)
 	}

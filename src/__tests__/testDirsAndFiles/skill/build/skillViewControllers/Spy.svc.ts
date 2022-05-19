@@ -1,6 +1,11 @@
 import { AbstractSkillViewController, SkillViewControllerLoadOptions, SpruceSchemas } from "@sprucelabs/heartwood-view-controllers"
 
-export default class SpySkillViewController extends AbstractSkillViewController {
+export interface Args {
+    what?: boolean
+    world?: string
+}
+
+export default class SpySkillViewController extends AbstractSkillViewController<Args> {
     public static id = 'spy'
     public loads: SkillViewControllerLoadOptions[] = []
     public async load(options: SkillViewControllerLoadOptions) {
