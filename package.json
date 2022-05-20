@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "@sprucelabs/error": "^5.0.456",
-    "@sprucelabs/heartwood-view-controllers": "^72.2.9",
+    "@sprucelabs/heartwood-view-controllers": "^72.2.10",
     "@sprucelabs/schema": "^28.2.7",
     "@sprucelabs/spruce-core-schemas": "^27.1.18",
     "@sprucelabs/spruce-event-plugin": "^31.0.46",
@@ -93,7 +93,7 @@
     "chokidar-cli": "^3.0.0",
     "concurrently": "^7.2.0",
     "conventional-changelog-sprucelabs": "^1.1.2",
-    "eslint": "^8.15.0",
+    "eslint": "^8.16.0",
     "eslint-config-spruce": "^10.11.2",
     "inquirer": "^8.2.4",
     "jest": "^28.1.0",
