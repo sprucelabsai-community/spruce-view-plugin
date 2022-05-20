@@ -72,10 +72,10 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
 		return this.views.load(vc, args)
 	}
 
-	protected static render<VC extends ViewController<any>>(
-		vc: VC,
+	protected static render<Vc extends ViewController<any>>(
+		vc: Vc,
 		options?: RenderOptions | undefined
-	): ReturnType<VC['render']> {
+	): ReturnType<Vc['render']> {
 		return renderUtil.render(vc, options)
 	}
 }
