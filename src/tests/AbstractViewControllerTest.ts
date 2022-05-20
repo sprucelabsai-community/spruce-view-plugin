@@ -66,7 +66,7 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
 	}
 
 	protected static async load<Svc extends SkillViewController>(
-		vc: Svc,
+		vc: Pick<Svc, 'load'>,
 		args?: ArgsFromSvc<Svc>
 	) {
 		return this.views.load(vc, args)
