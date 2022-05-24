@@ -1,3 +1,10 @@
+# [18.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v17.0.49...v18.0.0) (2022-05-24)
+
+
+### Breaking Changes
+
+* upgrade ([1190cca](https://github.com/sprucelabsai/spruce-view-plugin/commit/1190cca))
+
 ## [17.0.49](https://github.com/sprucelabsai/spruce-view-plugin/compare/v17.0.48...v17.0.49) (2022-05-24)
 
 ## [17.0.48](https://github.com/sprucelabsai/spruce-view-plugin/compare/v17.0.47...v17.0.48) (2022-05-24)
