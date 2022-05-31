@@ -1,3 +1,10 @@
+# [20.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v19.0.17...v20.0.0) (2022-05-31)
+
+
+### Breaking Changes
+
+* **auto-upgrade:** upgraded packages [upgrade-all] ([bae2492](https://github.com/sprucelabsai/spruce-view-plugin/commit/bae2492))
+
 ## [19.0.17](https://github.com/sprucelabsai/spruce-view-plugin/compare/v19.0.16...v19.0.17) (2022-05-30)
 
 ## [19.0.16](https://github.com/sprucelabsai/spruce-view-plugin/compare/v19.0.15...v19.0.16) (2022-05-30)
