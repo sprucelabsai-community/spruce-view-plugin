@@ -1,3 +1,10 @@
+# [22.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v21.0.0...v22.0.0) (2022-06-01)
+
+
+### Breaking Changes
+
+* spruce upgrade ([db2397c](https://github.com/sprucelabsai/spruce-view-plugin/commit/db2397c))
+
 # [21.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v20.0.0...v21.0.0) (2022-06-01)
 
 
