@@ -1,3 +1,10 @@
+# [23.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v22.0.68...v23.0.0) (2022-06-13)
+
+
+### Breaking Changes
+
+* **auto-upgrade:** upgraded packages [upgrade-all] ([18b61f2](https://github.com/sprucelabsai/spruce-view-plugin/commit/18b61f2))
+
 ## [22.0.68](https://github.com/sprucelabsai/spruce-view-plugin/compare/v22.0.67...v22.0.68) (2022-06-12)
 
 ## [22.0.67](https://github.com/sprucelabsai/spruce-view-plugin/compare/v22.0.66...v22.0.67) (2022-06-12)
