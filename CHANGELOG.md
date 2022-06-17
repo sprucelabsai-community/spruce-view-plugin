@@ -1,3 +1,11 @@
+# [26.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v25.0.18...v26.0.0) (2022-06-17)
+
+
+### Breaking Changes
+
+* spruce upgrade ([4d81d04](https://github.com/sprucelabsai/spruce-view-plugin/commit/4d81d04))
+* spruce upgrade ([fedf72d](https://github.com/sprucelabsai/spruce-view-plugin/commit/fedf72d))
+
 ## [25.0.18](https://github.com/sprucelabsai/spruce-view-plugin/compare/v25.0.17...v25.0.18) (2022-06-17)
 
 ## [25.0.17](https://github.com/sprucelabsai/spruce-view-plugin/compare/v25.0.16...v25.0.17) (2022-06-16)
