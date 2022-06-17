@@ -17,6 +17,7 @@
 		"noUnusedLocals": true,
 		"resolveJsonModule": true,
 		"moduleResolution": "node",
+		"skipLibCheck": true,
 		"sourceMap": false,
 		"outDir": "build",
 		"baseUrl": "src",
