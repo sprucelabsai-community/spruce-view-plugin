@@ -17,7 +17,8 @@
   },
   "writer": {
     "skipped": [
-      ".eslintignore"
+      ".eslintignore",
+      "tsconfig.json"
     ]
   }
 }
