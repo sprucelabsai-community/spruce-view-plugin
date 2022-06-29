@@ -1,3 +1,10 @@
+# [28.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v27.0.6...v28.0.0) (2022-06-29)
+
+
+### Breaking Changes
+
+* dependency upgrades ([0209c28](https://github.com/sprucelabsai/spruce-view-plugin/commit/0209c28))
+
 ## [27.0.6](https://github.com/sprucelabsai/spruce-view-plugin/compare/v27.0.5...v27.0.6) (2022-06-29)
 
 ## [27.0.5](https://github.com/sprucelabsai/spruce-view-plugin/compare/v27.0.4...v27.0.5) (2022-06-28)
