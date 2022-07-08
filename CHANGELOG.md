@@ -1,3 +1,10 @@
+# [29.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v28.0.40...v29.0.0) (2022-07-08)
+
+
+### Breaking Changes
+
+* **auto-upgrade:** upgraded packages [upgrade-all] ([090ad1d](https://github.com/sprucelabsai/spruce-view-plugin/commit/090ad1d))
+
 ## [28.0.40](https://github.com/sprucelabsai/spruce-view-plugin/compare/v28.0.39...v28.0.40) (2022-07-07)
 
 ## [28.0.39](https://github.com/sprucelabsai/spruce-view-plugin/compare/v28.0.38...v28.0.39) (2022-07-07)
