@@ -17,7 +17,7 @@
       "@types/node"
     ]
   },
-  "version": "29.0.56",
+  "version": "29.0.57",
   "files": [
     "build/**/*",
     "!build/__tests__",
