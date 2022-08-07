@@ -1,35 +1,51 @@
-import { MercuryClient } from '@sprucelabs/mercury-client'
+import AbstractSpruceError from '@sprucelabs/error'
+import { MercuryClient, MercuryTestClient } from '@sprucelabs/mercury-client'
 import { SpruceSchemas } from '@sprucelabs/mercury-types'
 import { EventFeature } from '@sprucelabs/spruce-event-plugin'
-import {
-	eventAssertUtil,
-	eventResponseUtil,
-} from '@sprucelabs/spruce-event-utils'
+import { eventAssertUtil } from '@sprucelabs/spruce-event-utils'
 import { AuthService, Skill } from '@sprucelabs/spruce-skill-utils'
-import { vcDiskUtil, login } from '@sprucelabs/spruce-test-fixtures'
+import { vcDiskUtil, fake } from '@sprucelabs/spruce-test-fixtures'
 import { assert, assertUtil, test } from '@sprucelabs/test'
-import { errorAssertUtil } from '@sprucelabs/test-utils'
+import { errorAssert } from '@sprucelabs/test-utils'
 import { ViewFeature } from '../../plugins/view.plugin'
 import AbstractViewPluginTest from '../../tests/AbstractViewPluginTest'
 import { DEMO_NUMBER } from '../../tests/constants'
-import { CoreEventContract } from '../../tests/events.contract'
+import eventContracts, { CoreEventContract } from '../../tests/events.contract'
+import EventFaker from '../support/EventFaker'
 
 type RegisteredSkill = SpruceSchemas.Spruce.v2020_07_22.Skill
 
-@login(DEMO_NUMBER)
+class Error extends AbstractSpruceError {}
+
+@fake.login(DEMO_NUMBER)
 export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTest {
 	private static currentSkill: RegisteredSkill
+	private static eventFaker: EventFaker
 
 	protected static async beforeEach() {
 		await super.beforeEach()
+
 		this.currentSkill =
 			await this.importEventContractSeedAndRegisterCurrentSkill()
+
+		this.eventFaker = new EventFaker()
+
+		MercuryTestClient.mixinContract(eventContracts[1])
 	}
 
 	@test()
 	protected static async registersNothingToStart() {
+		await this.eventFaker.fakeGetSkillViews(({ target }) => {
+			throw new Error({
+				//@ts-ignore
+				code: 'SKILL_VIEWS_NOT_FOUND',
+				namespace: target.namespace,
+			})
+		})
+
 		const { skill } = await this.bootSkill()
-		const results = await this.getSkillViews(skill)
+
+		const results = await this.emitGetSkillViews(skill)
 
 		eventAssertUtil.assertErrorFromResponse(results, 'SKILL_VIEWS_NOT_FOUND', {
 			namespace: this.currentSkill.slug,
@@ -39,6 +55,11 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 	@test()
 	protected static async registersViewsOnBoot() {
 		process.env.SHOULD_REGISTER_VIEWS = 'true'
+		let passedTargetAndPayload: Record<string, any> | undefined
+
+		await this.eventFaker.fakeRegisterSkillViews((targetAndPayload) => {
+			passedTargetAndPayload = targetAndPayload
+		})
 
 		const skill = await this.GoodSkill()
 
@@ -48,11 +69,18 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 			assert.fail(assertUtil.stringify(err))
 		}
 
-		const results = await this.getSkillViews(skill)
-		const registered = eventResponseUtil.getFirstResponseOrThrow(results)
+		assert.isTruthy(passedTargetAndPayload)
 
-		assert.isEqualDeep(registered.ids, ['book', 'book-form', 'spy'])
-		assert.isFalsy(registered.theme)
+		delete passedTargetAndPayload.source
+
+		assert.isEqualDeep(passedTargetAndPayload, {
+			payload: {
+				ids: ['book', 'book-form', 'spy'],
+				//TODO find out better way to test source?
+				source: passedTargetAndPayload.payload.source,
+				theme: undefined,
+			},
+		})
 	}
 
 	@test()
@@ -62,7 +90,7 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 
 		//@ts-ignore
 		viewsPlugin.importAndRegisterSkillViews = () => {
-			throw Error('should not be hit')
+			assert.fail('should not be hit')
 		}
 
 		await this.bootSkill({ skill })
@@ -73,11 +101,17 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 		process.env.SHOULD_REGISTER_VIEWS = 'true'
 		const skill = await this.BadSkill()
 		const err = await assert.doesThrowAsync(() => this.bootSkill({ skill }))
-		errorAssertUtil.assertError(err, 'INVALID_VIEW_CONTROLLER')
+		errorAssert.assertError(err, 'INVALID_VIEW_CONTROLLER')
 	}
 
 	@test()
 	protected static async registersThemeWithSkillView() {
+		let passedThemed: Record<string, any> | undefined
+
+		await this.eventFaker.fakeRegisterSkillViews(({ payload }) => {
+			passedThemed = payload.theme
+		})
+
 		process.env.SHOULD_REGISTER_VIEWS = 'true'
 		const themeFile = vcDiskUtil.resolveThemeFile(
 			this.resolveTestPathSrc('skill-with-theme', 'build')
@@ -92,11 +126,7 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 
 		await this.bootSkill({ skill })
 
-		const results = await this.getSkillViews(skill)
-		const registered = eventResponseUtil.getFirstResponseOrThrow(results)
-
-		assert.isTruthy(registered.theme)
-		assert.doesInclude(registered.theme.props, expected)
+		assert.isEqualDeep(passedThemed, { name: 'Theme', props: expected })
 	}
 
 	private static async GoodSkillWithTheme() {
@@ -107,7 +137,7 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 		return this.TestSkillWithViewFilesInPlace('broken-skill')
 	}
 
-	private static async getSkillViews(skill: Skill) {
+	private static async emitGetSkillViews(skill: Skill) {
 		const client = await this.connectToApi(skill)
 
 		return await client.emit('heartwood.get-skill-views::v2021_02_11', {
