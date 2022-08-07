@@ -7714,6 +7714,9 @@ buildEventContract({
                         "namespace": "Heartwood",
                         "name": "",
                         "fields": {
+                          "name": {
+                            "type": "text",
+                          },
                           "props": {
                             "type": "schema",
                             "isRequired": true,
