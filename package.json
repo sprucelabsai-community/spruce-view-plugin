@@ -14,8 +14,7 @@
     "upgradeIgnoreList": [
       "globby",
       "@sprucelabs/mercury-core-events",
-      "@types/node",
-      "typescript"
+      "@types/node"
     ]
   },
   "version": "33.0.7",
