@@ -18,7 +18,7 @@
       "typescript"
     ]
   },
-  "version": "33.0.6",
+  "version": "33.0.7",
   "files": [
     "build/**/*",
     "!build/__tests__",
