@@ -41,7 +41,7 @@ export class ViewFeature implements SkillFeature {
 			}
 		}
 
-		this.bootHandler?.()
+		await this.bootHandler?.()
 
 		this._isBooted = true
 	}
