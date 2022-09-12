@@ -7,7 +7,7 @@ import {
 } from '@sprucelabs/heartwood-view-controllers'
 import { validateSchemaValues, Schema } from '@sprucelabs/schema'
 import { diskUtil } from '@sprucelabs/spruce-skill-utils'
-import { assert, test } from '@sprucelabs/test'
+import { assert, test } from '@sprucelabs/test-utils'
 import globby from 'globby'
 import AbstractViewControllerTest from '../../tests/AbstractViewControllerTest'
 // eslint-disable-next-line spruce/prohibit-import-from-build-folder

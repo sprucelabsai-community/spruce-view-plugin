@@ -4,7 +4,7 @@ import { eventContractUtil } from '@sprucelabs/spruce-event-utils'
 import { SkillFactoryOptions } from '@sprucelabs/spruce-skill-booter'
 import { diskUtil } from '@sprucelabs/spruce-skill-utils'
 import { AbstractSpruceFixtureTest } from '@sprucelabs/spruce-test-fixtures'
-import { assert } from '@sprucelabs/test'
+import { assert } from '@sprucelabs/test-utils'
 import plugin from '../plugins/view.plugin'
 import coreEventContracts from './events.contract'
 

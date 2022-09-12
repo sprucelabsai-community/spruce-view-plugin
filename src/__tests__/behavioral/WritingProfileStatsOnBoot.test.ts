@@ -1,5 +1,5 @@
 import { diskUtil } from '@sprucelabs/spruce-skill-utils'
-import { test, assert } from '@sprucelabs/test'
+import { test, assert } from '@sprucelabs/test-utils'
 import AbstractViewPluginTest from '../../tests/AbstractViewPluginTest'
 
 export default class WritingProfileStatsOnBootTest extends AbstractViewPluginTest {
