@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "@sprucelabs/error": "^5.0.514",
-    "@sprucelabs/heartwood-view-controllers": "^90.11.1",
+    "@sprucelabs/heartwood-view-controllers": "^90.11.2",
     "@sprucelabs/schema": "^28.5.15",
     "@sprucelabs/spruce-core-schemas": "^34.2.108",
     "@sprucelabs/spruce-event-plugin": "^49.0.51",
@@ -95,7 +95,7 @@
     "conventional-changelog-sprucelabs": "^1.1.2",
     "eslint": "^8.23.1",
     "eslint-config-spruce": "^10.11.4",
-    "inquirer": "^9.1.1",
+    "inquirer": "^9.1.2",
     "jest": "^29.0.3",
     "jest-circus": "^29.0.3",
     "prettier": "^2.7.1",
