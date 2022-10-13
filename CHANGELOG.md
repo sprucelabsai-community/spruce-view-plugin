@@ -1,3 +1,10 @@
+# [37.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v36.0.5...v37.0.0) (2022-10-13)
+
+
+### Breaking Changes
+
+* upgrade ([6be2ea2](https://github.com/sprucelabsai/spruce-view-plugin/commit/6be2ea2))
+
 ## [36.0.5](https://github.com/sprucelabsai/spruce-view-plugin/compare/v36.0.4...v36.0.5) (2022-10-13)
 
 ## [36.0.4](https://github.com/sprucelabsai/spruce-view-plugin/compare/v36.0.3...v36.0.4) (2022-10-13)
