@@ -1,3 +1,10 @@
+# [38.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v37.0.0...v38.0.0) (2022-10-14)
+
+
+### Breaking Changes
+
+* **auto-upgrade:** upgraded packages [upgrade-all] ([aad619d](https://github.com/sprucelabsai/spruce-view-plugin/commit/aad619d))
+
 # [37.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v36.0.5...v37.0.0) (2022-10-13)
 
 
