@@ -111,7 +111,7 @@ export class ViewFeature implements SkillFeature {
 					this.log.error('Incremental build error', err.stack ?? err.message)
 				} else {
 					this.log.info('Incremental build complete!')
-					this.registerSource()
+					void this.registerSource()
 				}
 			},
 		})
