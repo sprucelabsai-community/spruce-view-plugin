@@ -107,13 +107,16 @@ export class ViewFeature implements SkillFeature {
 			destination,
 			profilerStatsDestination: process.env.VIEW_PROFILER_STATS_DESTINATION_DIR,
 			shouldWatch: this.isWatching,
-			onIncrementalBuildCompleted: (err) => {
+			onDidIncrementallyBuild: (err) => {
 				if (err) {
 					this.log.error('Incremental build error', err.stack ?? err.message)
 				} else {
 					this.log.info('Incremental build complete!')
 					void this.registerSource()
 				}
+			},
+			onWillIncrementallyBuild: () => {
+				this.log.info('Changes detected... Building differences.')
 			},
 		})
 
