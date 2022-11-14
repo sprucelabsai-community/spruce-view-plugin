@@ -22,6 +22,9 @@ export class ViewFeature implements SkillFeature {
 	private _isBooted = false
 	private log: Log
 	private bootHandler?: BootCallback
+	private exporter!: ViewControllerExporter
+	private viewsSource!: string | false
+	private exportDestination?: string
 
 	public constructor(skill: Skill) {
 		this.skill = skill
@@ -32,69 +35,88 @@ export class ViewFeature implements SkillFeature {
 	}
 
 	public async execute(): Promise<void> {
-		const viewsPath = this.getCombinedViewsSourcePath()
-		if (viewsPath) {
-			if (process.env.SHOULD_REGISTER_VIEWS !== 'false') {
-				await this.importAndRegisterSkillViews(viewsPath)
-			} else if (process.env.VIEW_PROFILER_STATS_DESTINATION_DIR) {
-				await this.packViews(viewsPath)
-			}
+		this.exporter = ViewControllerExporter.Exporter(this.skill.rootDir)
+		this.viewsSource = vcDiskUtil.resolveCombinedViewsPath(
+			diskUtil.resolvePath(this.skill.rootDir, 'src')
+		)
+
+		if (process.env.SHOULD_REGISTER_VIEWS !== 'false') {
+			await this.exportAndRegister()
+		} else if (process.env.VIEW_PROFILER_STATS_DESTINATION_DIR) {
+			await this.export()
 		}
 
 		await this.bootHandler?.()
 
 		this._isBooted = true
+
+		if (this.isWatching) {
+			await new Promise(() => {})
+		}
 	}
 
-	private async importAndRegisterSkillViews(viewsPath: string) {
-		this.log.info('Importing local views.')
-
-		const source = await this.packViews(viewsPath)
-
-		const events = this.skill.getFeatureByCode('event') as EventFeature
-		const client = (await events.connectToApi()) as MercuryClient<any>
-		const { ids, theme } = vcDiskUtil.loadViewControllers(this.skill.activeDir)
-		this.log.info(`Bundled ${ids.length} view controllers. Registering now...`)
-
-		const results = await client.emitAndFlattenResponses(
-			'heartwood.register-skill-views::v2021_02_11',
-			{
-				payload: {
-					source,
-					ids,
-					theme,
-				},
-			}
-		)
-
-		this.log.info('Done registering view controllers.')
-
-		return results
+	private async exportAndRegister() {
+		if (this.viewsSource) {
+			this.log.info('Importing local views.')
+			await this.export()
+			await this.registerSource()
+		}
 	}
 
-	private async packViews(viewsPath: string) {
-		const exporter = ViewControllerExporter.Exporter(this.skill.rootDir)
+	private async registerSource() {
+		if (this.exportDestination) {
+			const source = diskUtil.readFile(this.exportDestination)
+			const events = this.skill.getFeatureByCode('event') as EventFeature
+			const client = (await events.connectToApi()) as MercuryClient<any>
+			const { ids, theme } = vcDiskUtil.loadViewControllers(
+				this.skill.activeDir
+			)
+			this.log.info(
+				`Bundled ${ids.length} view controllers. Registering now...`
+			)
+
+			await client.emitAndFlattenResponses(
+				'heartwood.register-skill-views::v2021_02_11',
+				{
+					payload: {
+						source,
+						ids,
+						theme,
+					},
+				}
+			)
+
+			this.log.info('Done registering view controllers.')
+		}
+	}
+
+	private async export() {
+		if (!this.viewsSource) {
+			return
+		}
 		const destination = diskUtil.resolvePath(
 			diskUtil.createRandomTempDir(),
 			'bundle.js'
 		)
 
-		await exporter.export({
-			source: viewsPath,
+		this.exportDestination = destination
+
+		await this.exporter?.export({
+			source: this.viewsSource,
 			destination,
 			profilerStatsDestination: process.env.VIEW_PROFILER_STATS_DESTINATION_DIR,
+			shouldWatch: this.isWatching,
+			onIncrementalBuildCompleted: (err) => {
+				if (err) {
+					this.log.error('Incremental build error', err.stack ?? err.message)
+				} else {
+					this.log.info('Incremental build complete!')
+					this.registerSource()
+				}
+			},
 		})
 
 		this.log.info('Bundling local views.')
-
-		const source = diskUtil.readFile(destination)
-		return source
-	}
-
-	private getCombinedViewsSourcePath() {
-		return vcDiskUtil.resolveCombinedViewsPath(
-			diskUtil.resolvePath(this.skill.rootDir, 'src')
-		)
 	}
 
 	public async checkHealth(): Promise<ViewHealthCheckItem> {
@@ -143,10 +165,16 @@ export class ViewFeature implements SkillFeature {
 		return settings.isMarkedAsInstalled('view')
 	}
 
-	public async destroy() {}
+	public async destroy() {
+		await this.exporter.kill()
+	}
 
 	public isBooted() {
 		return this._isBooted
+	}
+
+	private get isWatching() {
+		return process.env.SHOULD_WATCH_VIEWS === 'true'
 	}
 }
 

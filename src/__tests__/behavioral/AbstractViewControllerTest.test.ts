@@ -59,7 +59,7 @@ export default class AbstractViewControllerTestTest extends AbstractViewControll
 	}
 
 	@test()
-	protected static registeringSkillviewsFalseByDefault() {
+	protected static registeringSkillViewsFalseByDefault() {
 		assert.isEqual(process.env.SHOULD_REGISTER_VIEWS, 'false')
 	}
 

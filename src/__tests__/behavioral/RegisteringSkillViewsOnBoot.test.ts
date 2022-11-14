@@ -3,7 +3,7 @@ import { MercuryClient, MercuryTestClient } from '@sprucelabs/mercury-client'
 import { SpruceSchemas } from '@sprucelabs/mercury-types'
 import { EventFeature } from '@sprucelabs/spruce-event-plugin'
 import { eventAssertUtil } from '@sprucelabs/spruce-event-utils'
-import { AuthService, Skill } from '@sprucelabs/spruce-skill-utils'
+import { AuthService, diskUtil, Skill } from '@sprucelabs/spruce-skill-utils'
 import { vcDiskUtil, fake } from '@sprucelabs/spruce-test-fixtures'
 import { assert, assertUtil, errorAssert, test } from '@sprucelabs/test-utils'
 import { ViewFeature } from '../../plugins/view.plugin'
@@ -24,12 +24,13 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 	protected static async beforeEach() {
 		await super.beforeEach()
 
+		this.eventFaker = new EventFaker()
 		this.currentSkill =
 			await this.importEventContractSeedAndRegisterCurrentSkill()
 
-		this.eventFaker = new EventFaker()
-
 		MercuryTestClient.mixinContract(eventContracts[1])
+
+		delete process.env.SHOULD_WATCH_VIEWS
 	}
 
 	@test()
@@ -112,20 +113,56 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 		})
 
 		process.env.SHOULD_REGISTER_VIEWS = 'true'
+		await this.bootAuthedSkillWithTheme()
+
 		const themeFile = vcDiskUtil.resolveThemeFile(
 			this.resolveTestPathSrc('skill-with-theme', 'build')
 		)
-
 		assert.isString(themeFile)
 
 		const expected = require(themeFile).default
-		const skill = await this.GoodSkillWithTheme()
-
-		AuthService.Auth(this.cwd).updateCurrentSkill(this.currentSkill)
-
-		await this.bootSkill({ skill })
-
 		assert.isEqualDeep(passedThemed, { name: 'Theme', props: expected })
+	}
+
+	@test()
+	protected static async canWatchForChanges() {
+		let hitCount = 0
+
+		await this.eventFaker.fakeRegisterSkillViews(() => {
+			hitCount++
+		})
+
+		process.env.SHOULD_REGISTER_VIEWS = 'true'
+		process.env.SHOULD_WATCH_VIEWS = 'true'
+
+		await this.bootAuthedSkillWithTheme()
+
+		assert.isEqual(hitCount, 1)
+
+		const fileToChange = this.resolvePath('src', '.spruce', 'views', 'views.ts')
+
+		let contents = diskUtil.readFile(fileToChange)
+
+		diskUtil.writeFile(
+			fileToChange,
+			(contents += '\n\nconst test = true;\nconsole.log(test)')
+		)
+
+		await this.wait(5000)
+
+		assert.isEqual(hitCount, 2)
+	}
+
+	private static async bootAuthedSkillWithTheme() {
+		const skill = await this.AuthedSkillWithTheme()
+		await this.bootSkill({ skill })
+		return skill
+	}
+
+	private static async AuthedSkillWithTheme() {
+		const skill = await this.GoodSkillWithTheme()
+		AuthService.Auth(this.cwd).updateCurrentSkill(this.currentSkill)
+		return skill
 	}
 
 	private static async GoodSkillWithTheme() {
