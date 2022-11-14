@@ -51,6 +51,7 @@ export class ViewFeature implements SkillFeature {
 		this._isBooted = true
 
 		if (this.isWatching) {
+			this.log.info('Watching for view changes...')
 			await new Promise(() => {})
 		}
 	}
