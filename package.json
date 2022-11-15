@@ -69,12 +69,12 @@
   "dependencies": {
     "@sprucelabs/error": "^5.0.541",
     "@sprucelabs/heartwood-view-controllers": "^98.1.6",
-    "@sprucelabs/schema": "^28.5.67",
+    "@sprucelabs/schema": "^28.5.68",
     "@sprucelabs/spruce-core-schemas": "^35.1.55",
     "@sprucelabs/spruce-event-plugin": "^52.2.0",
     "@sprucelabs/spruce-event-utils": "^29.1.58",
     "@sprucelabs/spruce-skill-booter": "^52.2.0",
-    "@sprucelabs/spruce-skill-utils": "^28.0.51",
+    "@sprucelabs/spruce-skill-utils": "^28.0.52",
     "@sprucelabs/spruce-test-fixtures": "^52.2.0",
     "globby": "^11.0.4"
   },
@@ -87,7 +87,7 @@
     "@sprucelabs/resolve-path-aliases": "^1.1.130",
     "@sprucelabs/semantic-release": "^4.0.8",
     "@sprucelabs/test": "^7.7.387",
-    "@sprucelabs/test-utils": "^3.2.55",
+    "@sprucelabs/test-utils": "^3.2.56",
     "@types/inquirer": "^9.0.3",
     "@types/node": "17.0.5",
     "chokidar-cli": "^3.0.0",
