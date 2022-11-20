@@ -1,3 +1,5 @@
+## [40.1.15](https://github.com/sprucelabsai/spruce-view-plugin/compare/v40.1.14...v40.1.15) (2022-11-20)
+
 ## [40.1.14](https://github.com/sprucelabsai/spruce-view-plugin/compare/v40.1.13...v40.1.14) (2022-11-19)
 
 ## [40.1.13](https://github.com/sprucelabsai/spruce-view-plugin/compare/v40.1.12...v40.1.13) (2022-11-19)
