@@ -148,9 +148,14 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 			(contents += '\n\nconst test = true;\nconsole.log(test)')
 		)
 
-		await this.wait(5000)
-
-		assert.isEqual(hitCount, 2)
+		let count = 0
+		do {
+			if (count > 30) {
+				assert.fail('did not register skill views based on code changes!')
+			}
+			await this.wait(1000)
+			count++
+		} while (hitCount != 2)
 	}
 
 	private static async bootAuthedSkillWithTheme() {
