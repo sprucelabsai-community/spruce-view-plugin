@@ -1,3 +1,10 @@
+# [41.0.0](https://github.com/sprucelabsai/spruce-view-plugin/compare/v40.1.265...v41.0.0) (2023-02-23)
+
+
+### Breaking Changes
+
+* upgrade ([eaca543](https://github.com/sprucelabsai/spruce-view-plugin/commit/eaca543))
+
 ## [40.1.265](https://github.com/sprucelabsai/spruce-view-plugin/compare/v40.1.264...v40.1.265) (2023-02-22)
 
 ## [40.1.264](https://github.com/sprucelabsai/spruce-view-plugin/compare/v40.1.263...v40.1.264) (2023-02-22)
