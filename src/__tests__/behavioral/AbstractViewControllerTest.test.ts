@@ -1,3 +1,4 @@
+import globby from '@sprucelabs/globby'
 import {
 	cardSchema,
 	formSchema,
@@ -8,7 +9,6 @@ import {
 import { validateSchemaValues, Schema } from '@sprucelabs/schema'
 import { diskUtil } from '@sprucelabs/spruce-skill-utils'
 import { assert, test } from '@sprucelabs/test-utils'
-import globby from 'globby'
 import AbstractViewControllerTest from '../../tests/AbstractViewControllerTest'
 // eslint-disable-next-line spruce/prohibit-import-from-build-folder
 import BookSkillViewController from '../testDirsAndFiles/skill/build/skillViewControllers/Book.svc'
