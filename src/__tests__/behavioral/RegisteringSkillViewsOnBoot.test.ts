@@ -5,7 +5,7 @@ import { EventFeature } from '@sprucelabs/spruce-event-plugin'
 import { eventAssertUtil } from '@sprucelabs/spruce-event-utils'
 import { AuthService, diskUtil, Skill } from '@sprucelabs/spruce-skill-utils'
 import { vcDiskUtil, fake } from '@sprucelabs/spruce-test-fixtures'
-import { assert, assertUtil, errorAssert, test } from '@sprucelabs/test-utils'
+import { assert, errorAssert, test } from '@sprucelabs/test-utils'
 import { ViewFeature } from '../../plugins/view.plugin'
 import AbstractViewPluginTest from '../../tests/AbstractViewPluginTest'
 import { DEMO_NUMBER } from '../../tests/constants'
@@ -63,11 +63,7 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
 
 		const skill = await this.GoodSkill()
 
-		try {
-			await this.bootSkill({ skill })
-		} catch (err: any) {
-			assert.fail(assertUtil.stringify(err))
-		}
+		await this.bootSkill({ skill })
 
 		assert.isTruthy(passedTargetAndPayload)
 
