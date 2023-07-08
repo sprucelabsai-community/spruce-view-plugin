@@ -102,8 +102,6 @@ export class ViewFeature implements SkillFeature {
 
 		this.exportDestination = destination
 
-		debugger
-
 		await this.exporter?.export({
 			source: this.viewsSource,
 			destination,
