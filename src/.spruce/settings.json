@@ -12,7 +12,8 @@
   "scriptUpdater": {
     "skipped": [
       "build.tsc",
-      "lint"
+      "lint",
+      "test"
     ]
   },
   "writer": {
