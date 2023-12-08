@@ -69,7 +69,7 @@
     "@sprucelabs/error": "^5.1.52",
     "@sprucelabs/globby": "^1.0.3",
     "@sprucelabs/heartwood-view-controllers": "^108.25.12",
-    "@sprucelabs/schema": "^29.2.1",
+    "@sprucelabs/schema": "^29.2.2",
     "@sprucelabs/spruce-core-schemas": "^39.0.151",
     "@sprucelabs/spruce-event-plugin": "^60.1.92",
     "@sprucelabs/spruce-event-utils": "^38.0.172",
