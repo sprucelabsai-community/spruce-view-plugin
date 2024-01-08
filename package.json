@@ -68,14 +68,14 @@
   "dependencies": {
     "@sprucelabs/error": "^5.1.57",
     "@sprucelabs/globby": "^1.0.6",
-    "@sprucelabs/heartwood-view-controllers": "^108.34.0",
+    "@sprucelabs/heartwood-view-controllers": "^108.35.2",
     "@sprucelabs/schema": "^29.3.9",
     "@sprucelabs/spruce-core-schemas": "^39.0.175",
-    "@sprucelabs/spruce-event-plugin": "^60.1.158",
+    "@sprucelabs/spruce-event-plugin": "^60.1.159",
     "@sprucelabs/spruce-event-utils": "^38.0.201",
-    "@sprucelabs/spruce-skill-booter": "^60.1.158",
+    "@sprucelabs/spruce-skill-booter": "^60.1.159",
     "@sprucelabs/spruce-skill-utils": "^30.1.60",
-    "@sprucelabs/spruce-test-fixtures": "^60.1.158"
+    "@sprucelabs/spruce-test-fixtures": "^60.1.159"
   },
   "devDependencies": {
     "@sprucelabs/esm-postbuild": "^5.0.120",
