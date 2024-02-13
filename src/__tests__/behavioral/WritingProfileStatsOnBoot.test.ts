@@ -1,7 +1,9 @@
 import { diskUtil } from '@sprucelabs/spruce-skill-utils'
+import { fake } from '@sprucelabs/spruce-test-fixtures'
 import { test, assert } from '@sprucelabs/test-utils'
 import AbstractViewPluginTest from '../../tests/AbstractViewPluginTest'
 
+@fake.login()
 export default class WritingProfileStatsOnBootTest extends AbstractViewPluginTest {
 	@test()
 	protected static async writesProfileStatsIfEnvSet() {
