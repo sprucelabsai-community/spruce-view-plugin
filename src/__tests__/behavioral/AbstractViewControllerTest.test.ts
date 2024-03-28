@@ -25,17 +25,18 @@ declare module '@sprucelabs/heartwood-view-controllers/build/types/heartwood.typ
 }
 
 export default class AbstractViewControllerTestTest extends AbstractViewControllerTest {
-	protected static vcDir = diskUtil.resolvePath(
-		__dirname,
-		'..',
-		'testDirsAndFiles',
-		'skill',
-		'build'
-	)
+	protected static vcDir: string
 
 	protected static async beforeEach() {
 		await super.beforeEach()
 		delete this.controllerMap
+		this.vcDir = diskUtil.resolvePath(
+			__dirname,
+			'..',
+			'testDirsAndFiles',
+			'skill',
+			'build'
+		)
 	}
 
 	@test()
@@ -68,7 +69,7 @@ export default class AbstractViewControllerTestTest extends AbstractViewControll
 		const oldDir = this.vcDir
 		this.vcDir = 'taco'
 		const err = assert.doesThrow(() => this.Controller('view.book', {}))
-		assert.doesInclude(err.message, '.spruce')
+		assert.doesInclude(err.message, /.spruce/)
 		this.vcDir = oldDir
 	}
 
