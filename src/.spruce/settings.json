@@ -18,7 +18,8 @@
   },
   "writer": {
     "skipped": [
-      ".eslintignore"
+      ".eslintignore",
+      ".gitignore"
     ]
   }
 }
