@@ -5,18 +5,18 @@ import AbstractViewPluginTest from '../../tests/AbstractViewPluginTest'
 
 @fake.login()
 export default class WritingProfileStatsOnBootTest extends AbstractViewPluginTest {
-	@test()
-	protected static async writesProfileStatsIfEnvSet() {
-		const destinationDir = diskUtil.createRandomTempDir()
-		process.env.VIEW_PROFILER_STATS_DESTINATION_DIR = destinationDir
+    @test()
+    protected static async writesProfileStatsIfEnvSet() {
+        const destinationDir = diskUtil.createRandomTempDir()
+        process.env.VIEW_PROFILER_STATS_DESTINATION_DIR = destinationDir
 
-		await this.importEventContractSeedAndRegisterCurrentSkill()
+        await this.importEventContractSeedAndRegisterCurrentSkill()
 
-		const skill = await this.GoodSkill()
-		await this.bootSkill({ skill })
+        const skill = await this.GoodSkill()
+        await this.bootSkill({ skill })
 
-		const expected = this.resolvePath(destinationDir, 'stats.json')
+        const expected = this.resolvePath(destinationDir, 'stats.json')
 
-		assert.isTrue(diskUtil.doesFileExist(expected))
-	}
+        assert.isTrue(diskUtil.doesFileExist(expected))
+    }
 }

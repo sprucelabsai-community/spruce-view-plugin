@@ -1,4 +1,0 @@
-build
-esm
-node_modules
-src/tests/events.contract.ts

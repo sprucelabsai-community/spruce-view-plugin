@@ -1,29 +1,29 @@
 import { AbstractViewController } from '@sprucelabs/heartwood-view-controllers'
 
 export default class BookFormViewController extends AbstractViewController<any> {
-	public static id = 'book-form'
+    public static id = 'book-form'
 
-	//@ts-ignore
-	public render() {
-		//@ts-ignore
-		console.log = {}
+    //@ts-ignore
+    public render() {
+        //@ts-ignore
+        console.log = {}
 
-		//@ts-ignore
-		global.document = {
-			//@ts-ignore
-			__hack: true,
-		}
+        //@ts-ignore
+        global.document = {
+            //@ts-ignore
+            __hack: true,
+        }
 
-		//@ts-ignore
-		global.window = {
-			//@ts-ignore
-			__hack: true,
-		}
+        //@ts-ignore
+        global.window = {
+            //@ts-ignore
+            __hack: true,
+        }
 
-		return {
-			msg: 'what the?',
-			//@ts-ignore
-			globalHack2Value: global.__hack2,
-		}
-	}
+        return {
+            msg: 'what the?',
+            //@ts-ignore
+            globalHack2Value: global.__hack2,
+        }
+    }
 }

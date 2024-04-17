@@ -1,4 +1,8 @@
-import { AbstractSkillViewController, SkillViewControllerLoadOptions, SpruceSchemas } from "@sprucelabs/heartwood-view-controllers"
+import {
+    AbstractSkillViewController,
+    SkillViewControllerLoadOptions,
+    SpruceSchemas,
+} from '@sprucelabs/heartwood-view-controllers'
 
 export interface Args {
     what?: boolean
@@ -16,12 +20,14 @@ export default class SpySkillViewController extends AbstractSkillViewController<
         return {
             layouts: [
                 {
-                    cards: [{
-                        header: {
-                            title: 'hey!'
-                        }
-                    }]
-                }
+                    cards: [
+                        {
+                            header: {
+                                title: 'hey!',
+                            },
+                        },
+                    ],
+                },
             ],
         }
     }
