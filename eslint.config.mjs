@@ -7,5 +7,6 @@ export default buildEsLintConfig({
 		'node_modules/**',
 		'src/tests/events.contract.ts',
 		'**/testDirsAndFiles/**',
+		'**/.spruce/**'
 	],
 })
