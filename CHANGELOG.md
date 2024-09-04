@@ -1,3 +1,5 @@
+## [47.0.437](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v47.0.436...v47.0.437) (2024-09-04)
+
 ## [47.0.436](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v47.0.435...v47.0.436) (2024-09-04)
 
 ## [47.0.435](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v47.0.434...v47.0.435) (2024-09-04)
