@@ -5,11 +5,11 @@ import {
     RenderOptions,
     ViewController,
     renderUtil,
-    Scope,
 } from '@sprucelabs/heartwood-view-controllers'
 import {
     AbstractSpruceFixtureTest,
     ArgsFromSvc,
+    SpyScope,
     ViewControllerFixture,
 } from '@sprucelabs/spruce-test-fixtures'
 
@@ -18,16 +18,16 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
     protected static controllerMap: Record<string, any> | undefined
     private static viewFixture?: ViewControllerFixture
 
-    private static _scope?: Scope
+    private static _scope?: SpyScope
 
-    protected static get scope(): Scope {
+    protected static get scope(): SpyScope {
         if (!this._scope) {
             this._scope = this.views.getScope()
         }
         return this._scope
     }
 
-    protected static set scope(scope: Scope | undefined) {
+    protected static set scope(scope: SpyScope | undefined) {
         this._scope = scope
     }
 
