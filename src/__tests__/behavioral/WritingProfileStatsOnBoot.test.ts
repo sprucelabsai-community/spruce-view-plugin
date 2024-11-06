@@ -10,7 +10,7 @@ export default class WritingProfileStatsOnBootTest extends AbstractViewPluginTes
         const destinationDir = diskUtil.createRandomTempDir()
         process.env.VIEW_PROFILER_STATS_DESTINATION_DIR = destinationDir
 
-        await this.importEventContractSeedAndRegisterCurrentSkill()
+        await this.importEventContractSeedAndRegisterSkill()
 
         const skill = await this.GoodSkill()
         await this.bootSkill({ skill })

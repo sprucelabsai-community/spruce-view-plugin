@@ -36,7 +36,7 @@ export default abstract class AbstractViewPluginTest extends AbstractSpruceFixtu
         )
     }
 
-    protected static async seedAndRegisterCurrentSkill() {
+    protected static async seedAndRegisterSkill() {
         const currentSkill = await this.Fixture('skill').seedDemoSkill({
             name: 'my skill with events',
         })
@@ -58,7 +58,7 @@ export default abstract class AbstractViewPluginTest extends AbstractSpruceFixtu
         return this.TestSkillWithViewFilesInPlace('skill')
     }
 
-    protected static async importEventContractSeedAndRegisterCurrentSkill() {
+    protected static async importEventContractSeedAndRegisterSkill() {
         const combined = eventContractUtil.unifyContracts(
             coreEventContracts as any
         )
@@ -67,6 +67,6 @@ export default abstract class AbstractViewPluginTest extends AbstractSpruceFixtu
 
         MercuryClientFactory.setDefaultContract(combined)
 
-        return await this.seedAndRegisterCurrentSkill()
+        return await this.seedAndRegisterSkill()
     }
 }

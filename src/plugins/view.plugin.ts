@@ -69,6 +69,7 @@ export class ViewFeature implements SkillFeature {
             const source = diskUtil.readFile(this.exportDestination)
             const events = this.skill.getFeatureByCode('event') as EventFeature
             const client = (await events.connectToApi()) as MercuryClient<any>
+
             const { ids, theme } = vcDiskUtil.loadViewControllers(
                 this.skill.activeDir
             )
@@ -95,6 +96,7 @@ export class ViewFeature implements SkillFeature {
         if (!this.viewsSource) {
             return
         }
+
         const destination = diskUtil.resolvePath(
             diskUtil.createRandomTempDir(),
             'bundle.js'
@@ -102,9 +104,16 @@ export class ViewFeature implements SkillFeature {
 
         this.exportDestination = destination
 
+        const defines = Object.keys(process.env).reduce((acc, key) => {
+            //@ts-ignore
+            acc[`process.env.${key}`] = JSON.stringify(process.env[key])
+            return acc
+        }, {})
+
         await this.exporter?.export({
             source: this.viewsSource,
             destination,
+            defines,
             profilerStatsDestination:
                 process.env.VIEW_PROFILER_STATS_DESTINATION_DIR,
             shouldWatch: this.isWatching,

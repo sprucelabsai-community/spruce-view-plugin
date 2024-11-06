@@ -5,7 +5,7 @@ import { EventFeature } from '@sprucelabs/spruce-event-plugin'
 import { eventAssertUtil } from '@sprucelabs/spruce-event-utils'
 import { AuthService, diskUtil, Skill } from '@sprucelabs/spruce-skill-utils'
 import { vcDiskUtil, fake } from '@sprucelabs/spruce-test-fixtures'
-import { assert, errorAssert, test } from '@sprucelabs/test-utils'
+import { assert, errorAssert, generateId, test } from '@sprucelabs/test-utils'
 import { ViewFeature } from '../../plugins/view.plugin'
 import AbstractViewPluginTest from '../../tests/AbstractViewPluginTest'
 import { DEMO_NUMBER } from '../../tests/constants'
@@ -25,8 +25,7 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
         await super.beforeEach()
 
         this.eventFaker = new EventFaker()
-        this.currentSkill =
-            await this.importEventContractSeedAndRegisterCurrentSkill()
+        this.currentSkill = await this.importEventContractSeedAndRegisterSkill()
 
         MercuryTestClient.mixinContract(eventContracts[1])
 
@@ -44,7 +43,6 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
         })
 
         const { skill } = await this.bootSkill()
-
         const results = await this.emitGetSkillViews(skill)
 
         eventAssertUtil.assertErrorFromResponse(
@@ -65,9 +63,7 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
             passedTargetAndPayload = targetAndPayload
         })
 
-        const skill = await this.GoodSkill()
-
-        await this.bootSkill({ skill })
+        await this.bootGoodSkill()
 
         assert.isTruthy(passedTargetAndPayload)
 
@@ -165,6 +161,34 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
         } while (hitCount != 2)
     }
 
+    @test()
+    protected static async dropsInEnvVarsToBuild() {
+        process.env.SHOULD_REGISTER_VIEWS = 'true'
+        process.env.ANOTHER_ENV_VAR = generateId()
+        process.env.RENDER_OUTPUT = generateId()
+
+        let source: string | undefined
+        await this.eventFaker.fakeRegisterSkillViews(({ payload }) => {
+            source = payload.source
+        })
+
+        const skill =
+            await this.TestSkillWithViewFilesInPlace('skill-with-envs')
+        await this.bootSkill({ skill })
+
+        assert.doesInclude(
+            source,
+            process.env.ANOTHER_ENV_VAR,
+            `process.env.ANOTHER_ENV_VAR not included in source`
+        )
+
+        assert.doesInclude(
+            source,
+            process.env.RENDER_OUTPUT,
+            `process.env.RENDER_OUTPUT not included in source`
+        )
+    }
+
     private static async bootAuthedSkillWithTheme() {
         const skill = await this.AuthedSkillWithTheme()
         await this.bootSkill({ skill })
@@ -193,6 +217,11 @@ export default class RegistringSkillViewsOnBootTest extends AbstractViewPluginTe
                 namespace: this.currentSkill.slug,
             },
         })
+    }
+
+    private static async bootGoodSkill() {
+        const skill = await this.GoodSkill()
+        await this.bootSkill({ skill })
     }
 
     private static async connectToApi(skill: Skill) {
