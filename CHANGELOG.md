@@ -1,3 +1,10 @@
+# [47.2.0](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v47.1.62...v47.2.0) (2024-12-05)
+
+
+### Features
+
+* upgrade ([9946434](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/9946434))
+
 ## [47.1.62](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v47.1.61...v47.1.62) (2024-12-05)
 
 ## [47.1.61](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v47.1.60...v47.1.61) (2024-12-05)
