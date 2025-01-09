@@ -1,3 +1,10 @@
+# [50.0.0](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v49.0.4...v50.0.0) (2025-01-09)
+
+
+### Breaking Changes
+
+* upgrade ([246f235](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/246f235))
+
 ## [49.0.4](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v49.0.3...v49.0.4) (2025-01-09)
 
 ## [49.0.3](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v49.0.2...v49.0.3) (2025-01-09)
