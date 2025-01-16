@@ -1,3 +1,5 @@
+## [50.0.10](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v50.0.9...v50.0.10) (2025-01-16)
+
 ## [50.0.9](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v50.0.8...v50.0.9) (2025-01-15)
 
 ## [50.0.8](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v50.0.7...v50.0.8) (2025-01-15)
