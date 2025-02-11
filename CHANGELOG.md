@@ -1,3 +1,10 @@
+# [51.1.0](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.0.6...v51.1.0) (2025-02-11)
+
+
+### Features
+
+* can build source maps ([4836118](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/4836118))
+
 ## [51.0.6](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.0.5...v51.0.6) (2025-02-11)
 
 ## [51.0.5](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.0.4...v51.0.5) (2025-02-11)
