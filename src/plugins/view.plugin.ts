@@ -30,6 +30,7 @@ export class ViewFeature implements SkillFeature {
         this.skill = skill
         this.log = skill.buildLog('View.Feature')
     }
+
     public onBoot(cb: BootCallback): void {
         this.bootHandler = cb
     }
@@ -114,6 +115,8 @@ export class ViewFeature implements SkillFeature {
             source: this.viewsSource,
             destination,
             defines,
+            shouldBuildSourceMaps:
+                process.env.SHOULD_VIEWS_GENERATE_SOURCE_MAPS === 'true',
             profilerStatsDestination:
                 process.env.VIEW_PROFILER_STATS_DESTINATION_DIR,
             shouldWatch: this.isWatching,
