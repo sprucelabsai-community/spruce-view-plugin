@@ -1,3 +1,15 @@
+## [51.1.26](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.1.25...v51.1.26) (2025-02-25)
+
+## [51.1.25](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.1.24...v51.1.25) (2025-02-25)
+
+## [51.1.24](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.1.23...v51.1.24) (2025-02-24)
+
+## [51.1.23](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.1.22...v51.1.23) (2025-02-24)
+
+## [51.1.22](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.1.21...v51.1.22) (2025-02-24)
+
+## [51.1.21](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.1.20...v51.1.21) (2025-02-24)
+
 ## [51.1.20](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.1.19...v51.1.20) (2025-02-23)
 
 ## [51.1.19](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.1.18...v51.1.19) (2025-02-20)
