@@ -78,4 +78,64 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
     ): ReturnType<Vc['render']> {
         return renderUtil.render(vc, options)
     }
+
+    //instance based
+    protected vcDir?: string
+    protected controllerMap: Record<string, any> | undefined
+    private viewFixture?: ViewControllerFixture
+
+    private _scope?: SpyScope
+
+    protected get scope(): SpyScope {
+        if (!this._scope) {
+            this._scope = this.views.getScope()
+        }
+        return this._scope
+    }
+
+    protected set scope(scope: SpyScope | undefined) {
+        this._scope = scope
+    }
+
+    public get views(): ViewControllerFixture {
+        if (!this.viewFixture) {
+            this.viewFixture = this.Fixture('view', {
+                controllerMap: this.controllerMap,
+                vcDir: this.vcDir,
+            })
+        }
+
+        return this.viewFixture
+    }
+
+    public set views(views: ViewControllerFixture | undefined) {
+        this.viewFixture = views
+    }
+
+    protected Controller<N extends ViewControllerId>(
+        name: N,
+        options: ControllerOptions<N>
+    ) {
+        const controller = this.views.Controller(name, options)
+
+        return controller
+    }
+
+    protected getViewControllerFactory() {
+        return this.views.getFactory()
+    }
+
+    protected async load<Svc extends SkillViewController>(
+        vc: Pick<Svc, 'load'>,
+        args?: ArgsFromSvc<Svc>
+    ) {
+        return this.views.load(vc, args)
+    }
+
+    protected render<Vc extends ViewController<any>>(
+        vc: Vc,
+        options?: RenderOptions | undefined
+    ): ReturnType<Vc['render']> {
+        return renderUtil.render(vc, options)
+    }
 }
