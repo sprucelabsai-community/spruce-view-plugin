@@ -1,3 +1,10 @@
+# [51.2.0](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.1.26...v51.2.0) (2025-02-27)
+
+
+### Features
+
+* instance support ([e1226a0](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/e1226a0))
+
 ## [51.1.26](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.1.25...v51.1.26) (2025-02-25)
 
 ## [51.1.25](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v51.1.24...v51.1.25) (2025-02-25)
