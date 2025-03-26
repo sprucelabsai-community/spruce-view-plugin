@@ -5,6 +5,7 @@ import {
     RenderOptions,
     ViewController,
     renderUtil,
+    RenderUtilVc,
 } from '@sprucelabs/heartwood-view-controllers'
 import {
     AbstractSpruceFixtureTest,
@@ -132,7 +133,7 @@ export default abstract class AbstractViewControllerTest extends AbstractSpruceF
         return this.views.load(vc, args)
     }
 
-    protected render<Vc extends ViewController<any>>(
+    protected render<Vc extends RenderUtilVc>(
         vc: Vc,
         options?: RenderOptions | undefined
     ): ReturnType<Vc['render']> {
