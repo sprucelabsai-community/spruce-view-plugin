@@ -45,8 +45,10 @@ const theme: SpruceSchemas.HeartwoodViewControllers.v2021_02_11.ThemeProps = {
      * START Control bar
      ************************************
      */
-    controlBarColor1: 'blue',
-    controlBarColor2: 'blue',
+	controlBar: {
+		backgroundColor: 'blue',
+		foregroundColor: 'blue',
+	},
 
     /**
      ************************************
