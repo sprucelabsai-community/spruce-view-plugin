@@ -90,7 +90,7 @@
     "chokidar-cli": "^3.0.0",
     "eslint": "^9.32.0",
     "eslint-config-spruce": "^11.2.26",
-    "inquirer": "^12.8.2",
+    "inquirer": "^12.9.0",
     "jest": "^30.0.5",
     "jest-circus": "^30.0.5",
     "prettier": "^3.6.2",
