@@ -14,8 +14,9 @@ import {
     vcDiskUtil,
     ViewHealthCheckItem,
 } from '@sprucelabs/spruce-test-fixtures'
+import dotenv from 'dotenv'
 
-require('dotenv').config()
+dotenv.config({ quiet: true })
 
 export class ViewFeature implements SkillFeature {
     private skill: Skill
