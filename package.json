@@ -67,19 +67,19 @@
   "dependencies": {
     "@sprucelabs/error": "^7.1.1",
     "@sprucelabs/globby": "^2.0.506",
-    "@sprucelabs/heartwood-view-controllers": "^126.1.5",
+    "@sprucelabs/heartwood-view-controllers": "^126.1.6",
     "@sprucelabs/schema": "^32.1.16",
     "@sprucelabs/spruce-core-schemas": "^41.0.63",
-    "@sprucelabs/spruce-event-plugin": "^74.0.7",
+    "@sprucelabs/spruce-event-plugin": "^74.0.8",
     "@sprucelabs/spruce-event-utils": "^41.0.76",
-    "@sprucelabs/spruce-skill-booter": "^74.0.7",
+    "@sprucelabs/spruce-skill-booter": "^74.0.8",
     "@sprucelabs/spruce-skill-utils": "^32.0.72",
-    "@sprucelabs/spruce-test-fixtures": "^74.0.7"
+    "@sprucelabs/spruce-test-fixtures": "^74.0.8"
   },
   "devDependencies": {
     "@sprucelabs/esm-postbuild": "^7.0.23",
     "@sprucelabs/jest-json-reporter": "^9.0.36",
-    "@sprucelabs/mercury-client": "^43.0.93",
+    "@sprucelabs/mercury-client": "^43.0.94",
     "@sprucelabs/mercury-types": "^48.0.67",
     "@sprucelabs/resolve-path-aliases": "^3.0.18",
     "@sprucelabs/semantic-release": "^5.0.2",
@@ -90,7 +90,7 @@
     "chokidar-cli": "^3.0.0",
     "eslint": "^9.33.0",
     "eslint-config-spruce": "^11.2.26",
-    "inquirer": "^12.9.2",
+    "inquirer": "^12.9.3",
     "jest": "^30.0.5",
     "jest-circus": "^30.0.5",
     "prettier": "^3.6.2",
