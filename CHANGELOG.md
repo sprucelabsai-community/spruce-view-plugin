@@ -1,3 +1,8 @@
+## <small>59.0.133 (2025-11-08)</small>
+
+* Automated CI/CD permissions update ([7b93b2c](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/7b93b2c))
+* chore(auto-upgrade): upgraded packages [upgrade-all] ([cbc797e](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/cbc797e))
+
 ## [59.0.132](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v59.0.131...v59.0.132) (2025-10-31)
 
 ## [59.0.131](https://github.com/sprucelabsai-community/spruce-view-plugin/compare/v59.0.130...v59.0.131) (2025-10-31)
