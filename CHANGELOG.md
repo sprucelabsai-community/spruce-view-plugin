@@ -1,3 +1,8 @@
+## <small>59.0.134 (2025-11-08)</small>
+
+* chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([68ce816](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/68ce816))
+* chore(auto-upgrade): upgraded packages [upgrade-all] ([906e0d0](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/906e0d0))
+
 ## <small>59.0.133 (2025-11-08)</small>
 
 * Automated CI/CD permissions update ([7b93b2c](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/7b93b2c))
