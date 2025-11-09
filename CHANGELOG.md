@@ -1,3 +1,7 @@
+## <small>60.0.1 (2025-11-09)</small>
+
+* ptach: upgrade ([5f26e52](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/5f26e52))
+
 ## 60.0.0 (2025-11-09)
 
 * major: upgrade ([2f50b54](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/2f50b54))
