@@ -1,3 +1,7 @@
+## 60.0.0 (2025-11-09)
+
+* major: upgrade ([2f50b54](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/2f50b54))
+
 ## <small>59.0.134 (2025-11-08)</small>
 
 * chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([68ce816](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/68ce816))
