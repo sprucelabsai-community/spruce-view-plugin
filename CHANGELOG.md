@@ -1,3 +1,8 @@
+## <small>61.0.15 (2025-12-29)</small>
+
+* chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([a3778f6](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/a3778f6))
+* chore(auto-upgrade): upgraded packages [upgrade-all] ([1bb28a5](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/1bb28a5))
+
 ## <small>61.0.14 (2025-12-27)</small>
 
 * chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([1e661fc](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/1e661fc))
