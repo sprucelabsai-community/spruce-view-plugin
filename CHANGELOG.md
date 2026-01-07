@@ -1,3 +1,9 @@
+## 61.1.0 (2026-01-07)
+
+* feat: add exports field for proper ESM support in Node.js ([876951a](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/876951a))
+* chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([9a395a4](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/9a395a4))
+* chore(auto-upgrade): upgraded packages [upgrade-all] ([3b85950](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/3b85950))
+
 ## <small>61.0.18 (2026-01-07)</small>
 
 * chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([0eb5f64](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/0eb5f64))
