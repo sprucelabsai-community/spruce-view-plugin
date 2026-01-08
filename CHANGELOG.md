@@ -1,3 +1,7 @@
+## 62.0.0 (2026-01-08)
+
+* major: upgrade dependencies ([44ebb03](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/44ebb03))
+
 ## 61.1.0 (2026-01-07)
 
 * feat: add exports field for proper ESM support in Node.js ([876951a](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/876951a))
