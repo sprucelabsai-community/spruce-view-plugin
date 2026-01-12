@@ -15,7 +15,7 @@ import BookSkillViewController from '../testDirsAndFiles/skill/build/skillViewCo
 // eslint-disable-next-line spruce/prohibit-import-from-build-folder
 import SpySkillViewController from '../testDirsAndFiles/skill/build/skillViewControllers/Spy.svc'
 
-require('dotenv').config()
+require('dotenv').config({ quiet: true })
 
 declare module '@sprucelabs/heartwood-view-controllers/build/types/heartwood.types' {
     interface ViewControllerMap {
