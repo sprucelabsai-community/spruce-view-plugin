@@ -1,3 +1,8 @@
+## <small>62.0.3 (2026-01-20)</small>
+
+* chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([5e176e5](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/5e176e5))
+* chore(auto-upgrade): upgraded packages [upgrade-all] ([3b1af3c](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/3b1af3c))
+
 ## <small>62.0.2 (2026-01-12)</small>
 
 * Enable dotenv quiet mode to suppress missing .env warnings ([5e880b2](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/5e880b2))
