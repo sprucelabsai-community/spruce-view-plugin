@@ -1,3 +1,7 @@
+## <small>62.0.24 (2026-04-09)</small>
+
+* chore: add rootDir and types to tsconfig for TypeScript 6 compatibility ([d1d6f3d](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/d1d6f3d))
+
 ## <small>62.0.23 (2026-03-13)</small>
 
 * chore(auto-upgrade): Upgrade Tests Passed [auto-merge] ([1981c27](https://github.com/sprucelabsai-community/spruce-view-plugin/commit/1981c27))
